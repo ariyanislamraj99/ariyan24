@@ -125,7 +125,7 @@ const TestimonialsSection = () => {
   const ref = useScrollReveal();
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
-
+  const isMobile = useIsMobile();
   const paginate = useCallback((dir: number) => {
     setDirection(dir);
     setCurrent((prev) => (prev + dir + testimonials.length) % testimonials.length);
