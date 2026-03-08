@@ -4,8 +4,10 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
 
