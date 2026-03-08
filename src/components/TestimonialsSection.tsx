@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from "framer-motion";
-
+import { useIsMobile } from "@/hooks/use-mobile";
 const testimonials = [
   {
     name: "Sarah Chen",
@@ -125,7 +125,7 @@ const TestimonialsSection = () => {
   const ref = useScrollReveal();
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
-
+  const isMobile = useIsMobile();
   const paginate = useCallback((dir: number) => {
     setDirection(dir);
     setCurrent((prev) => (prev + dir + testimonials.length) % testimonials.length);
@@ -136,7 +136,11 @@ const TestimonialsSection = () => {
     return () => clearInterval(timer);
   }, [paginate]);
 
-  const variants = {
+  const variants = isMobile ? {
+    enter: { opacity: 0 },
+    center: { opacity: 1 },
+    exit: { opacity: 0 },
+  } : {
     enter: (d: number) => ({
       x: d > 0 ? 200 : -200,
       rotateY: d > 0 ? 45 : -45,
@@ -164,19 +168,22 @@ const TestimonialsSection = () => {
 
   return (
     <section id="testimonials" className="relative py-16 md:py-24 overflow-hidden">
-      <div className="glow-orb w-[350px] h-[350px] bg-secondary top-[10%] right-[-5%] animate-float animate-glow-pulse" />
-      <div className="glow-orb w-[250px] h-[250px] bg-primary bottom-[15%] left-[-3%] animate-float-delayed animate-glow-pulse" />
+      {!isMobile && (
+        <>
+          <div className="glow-orb w-[350px] h-[350px] bg-secondary top-[10%] right-[-5%] animate-float animate-glow-pulse" />
+          <div className="glow-orb w-[250px] h-[250px] bg-primary bottom-[15%] left-[-3%] animate-float-delayed animate-glow-pulse" />
 
-      {/* Floating particles */}
-      <FloatingParticle delay={0} x="15%" y="20%" />
-      <FloatingParticle delay={0.5} x="80%" y="30%" />
-      <FloatingParticle delay={1} x="25%" y="70%" />
-      <FloatingParticle delay={1.5} x="70%" y="65%" />
-      <FloatingParticle delay={2} x="50%" y="15%" />
-      <FloatingParticle delay={0.8} x="90%" y="50%" />
-      <FloatingParticle delay={1.2} x="10%" y="45%" />
-      <FloatingParticle delay={1.8} x="60%" y="80%" />
-
+          {/* Floating particles */}
+          <FloatingParticle delay={0} x="15%" y="20%" />
+          <FloatingParticle delay={0.5} x="80%" y="30%" />
+          <FloatingParticle delay={1} x="25%" y="70%" />
+          <FloatingParticle delay={1.5} x="70%" y="65%" />
+          <FloatingParticle delay={2} x="50%" y="15%" />
+          <FloatingParticle delay={0.8} x="90%" y="50%" />
+          <FloatingParticle delay={1.2} x="10%" y="45%" />
+          <FloatingParticle delay={1.8} x="60%" y="80%" />
+        </>
+      )}
       <div className="container mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
         <div className="text-center mb-10 md:mb-14">
           <motion.h2
@@ -209,85 +216,94 @@ const TestimonialsSection = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{
+                transition={isMobile ? { duration: 0.2 } : {
                   type: "spring",
                   stiffness: 200,
                   damping: 25,
                   mass: 0.8,
                 }}
                 className="w-full group"
-                style={{ transformStyle: "preserve-3d" }}
+                style={{ transformStyle: isMobile ? undefined : "preserve-3d" }}
               >
-                <Card3D className="relative">
-                  <div className="glass rounded-2xl p-8 md:p-10 gradient-border relative overflow-hidden">
-                    {/* Ambient light effect */}
-                    <div
-                      className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-20 blur-3xl"
-                      style={{
-                        background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))",
-                      }}
-                    />
-
-                    {/* Quote icon with 3D depth */}
-                    <motion.div
-                      style={{ transform: "translateZ(30px)" }}
-                      className="mb-4"
-                    >
-                      <Quote size={36} className="text-primary/30" />
-                    </motion.div>
-
-                    {/* Testimonial text */}
-                    <motion.p
-                      className="text-foreground text-base md:text-lg leading-relaxed mb-6 italic relative z-10"
-                      style={{ transform: "translateZ(20px)" }}
-                    >
+                {isMobile ? (
+                  <div className="glass rounded-2xl p-6 relative overflow-hidden">
+                    <Quote size={28} className="text-primary/30 mb-4" />
+                    <p className="text-foreground text-base leading-relaxed mb-6 italic">
                       "{t.text}"
-                    </motion.p>
-
-                    {/* Star rating */}
-                    <div className="flex gap-1 mb-6" style={{ transform: "translateZ(25px)" }}>
+                    </p>
+                    <div className="flex gap-1 mb-6">
                       {Array.from({ length: t.rating }).map((_, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, scale: 0 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.3 + i * 0.08, type: "spring" }}
-                        >
-                          <Star size={16} className="fill-yellow-400 text-yellow-400" />
-                        </motion.div>
+                        <Star key={i} size={16} className="fill-primary text-primary" />
                       ))}
                     </div>
-
-                    {/* Author info */}
-                    <div
-                      className="flex items-center gap-4 relative z-10"
-                      style={{ transform: "translateZ(15px)" }}
-                    >
-                      <motion.div
-                        className="w-14 h-14 rounded-full gradient-bg flex items-center justify-center text-primary-foreground font-bold text-sm shrink-0 shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-primary-foreground font-bold text-sm shrink-0">
                         {t.avatar}
-                      </motion.div>
+                      </div>
                       <div>
-                        <p className="font-semibold text-foreground text-lg">{t.name}</p>
+                        <p className="font-semibold text-foreground">{t.name}</p>
                         <p className="text-sm text-muted-foreground">{t.role}</p>
                       </div>
                     </div>
-
-                    {/* Bottom gradient line */}
-                    <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-0.5"
-                      style={{
-                        background: "linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)))",
-                      }}
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ delay: 0.4, duration: 0.6 }}
-                    />
                   </div>
-                </Card3D>
+                ) : (
+                  <Card3D className="relative">
+                    <div className="glass rounded-2xl p-8 md:p-10 gradient-border relative overflow-hidden">
+                      <div
+                        className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-20 blur-3xl"
+                        style={{
+                          background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))",
+                        }}
+                      />
+                      <motion.div style={{ transform: "translateZ(30px)" }} className="mb-4">
+                        <Quote size={36} className="text-primary/30" />
+                      </motion.div>
+                      <motion.p
+                        className="text-foreground text-base md:text-lg leading-relaxed mb-6 italic relative z-10"
+                        style={{ transform: "translateZ(20px)" }}
+                      >
+                        "{t.text}"
+                      </motion.p>
+                      <div className="flex gap-1 mb-6" style={{ transform: "translateZ(25px)" }}>
+                        {Array.from({ length: t.rating }).map((_, i) => (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.3 + i * 0.08, type: "spring" }}
+                          >
+                            <Star size={16} className="fill-primary text-primary" />
+                          </motion.div>
+                        ))}
+                      </div>
+                      <div
+                        className="flex items-center gap-4 relative z-10"
+                        style={{ transform: "translateZ(15px)" }}
+                      >
+                        <motion.div
+                          className="w-14 h-14 rounded-full gradient-bg flex items-center justify-center text-primary-foreground font-bold text-sm shrink-0"
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          {t.avatar}
+                        </motion.div>
+                        <div>
+                          <p className="font-semibold text-foreground text-lg">{t.name}</p>
+                          <p className="text-sm text-muted-foreground">{t.role}</p>
+                        </div>
+                      </div>
+                      <motion.div
+                        className="absolute bottom-0 left-0 right-0 h-0.5"
+                        style={{
+                          background: "linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)))",
+                        }}
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ delay: 0.4, duration: 0.6 }}
+                      />
+                    </div>
+                  </Card3D>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
