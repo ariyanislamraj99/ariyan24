@@ -208,6 +208,7 @@ const SkillsSection = () => {
                       key={skill.name}
                       {...skill}
                       delay={0.3 + ci * 0.1 + si * 0.08}
+                      inView={inView}
                     />
                   ))}
                 </div>
