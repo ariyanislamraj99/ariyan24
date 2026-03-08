@@ -27,7 +27,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-6">
         <a href="#home" className="text-xl font-display font-bold gradient-text">
-          Portfolio
+          Ariyan
         </a>
 
         {/* Desktop */}
