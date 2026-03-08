@@ -20,12 +20,12 @@ const technicalSkills = [
 ];
 
 const codingSkills = [
-  { name: "JavaScript", level: 95 },
-  { name: "TypeScript", level: 92 },
-  { name: "Python", level: 80 },
-  { name: "HTML / CSS", level: 95 },
-  { name: "SQL", level: 85 },
-  { name: "C / C++", level: 70 },
+  { name: "JavaScript", level: 95, icon: FileCode },
+  { name: "TypeScript", level: 92, icon: FileType },
+  { name: "Python", level: 80, icon: Terminal },
+  { name: "HTML / CSS", level: 95, icon: Code },
+  { name: "SQL", level: 85, icon: Database },
+  { name: "C / C++", level: 70, icon: Hash },
 ];
 
 const languageSkills = [
