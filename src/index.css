@@ -174,12 +174,24 @@ html {
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.5), hsl(var(--secondary) / 0.5), hsl(var(--accent) / 0.5));
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.6), hsl(var(--secondary) / 0.6), hsl(var(--accent) / 0.6));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+    animation: neon-border 3s ease-in-out infinite;
+  }
+  .gradient-border::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(var(--secondary) / 0.15), hsl(var(--accent) / 0.15));
+    filter: blur(8px);
+    pointer-events: none;
+    z-index: -1;
+    animation: neon-glow 3s ease-in-out infinite;
   }
 
   .glow-orb {
@@ -222,4 +234,14 @@ html {
   0% { background-position: 0% 0%; }
   50% { background-position: 0% 100%; }
   100% { background-position: 0% 0%; }
+}
+
+@keyframes neon-border {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes neon-glow {
+  0%, 100% { opacity: 0.15; filter: blur(8px); }
+  50% { opacity: 0.3; filter: blur(12px); }
 }
