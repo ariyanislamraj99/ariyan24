@@ -49,36 +49,40 @@ const ProjectsSection = () => {
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className="glass rounded-2xl overflow-hidden gradient-border group hover:shadow-glass-strong transition-all duration-500 hover:-translate-y-2 opacity-0 animate-slide-up"
+              className="group [perspective:1000px] opacity-0 animate-slide-up"
               style={{ animationDelay: `${0.2 + i * 0.15}s` }}
             >
-              {/* Color bar */}
-              <div className={`h-1 w-full bg-gradient-to-r ${project.gradient}`} />
+              <div className="transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(12deg)_rotateX(5deg)_scale(1.02)] will-change-transform">
+                <div className="glass rounded-2xl overflow-hidden gradient-border shadow-glass group-hover:shadow-glass-strong transition-shadow duration-500">
+                  {/* Color bar */}
+                  <div className={`h-1 w-full bg-gradient-to-r ${project.gradient}`} />
 
-              <div className="p-6 sm:p-8">
-                <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:gradient-text transition-all duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{project.description}</p>
+                  <div className="p-6 sm:p-8">
+                    <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:gradient-text transition-all duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{project.description}</p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-3 py-1 rounded-full glass-subtle text-muted-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs px-3 py-1 rounded-full glass-subtle text-muted-foreground"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
 
-                <div className="flex gap-4">
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="View source">
-                    <Github size={20} />
-                  </a>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="View live">
-                    <ExternalLink size={20} />
-                  </a>
+                    <div className="flex gap-4">
+                      <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="View source">
+                        <Github size={20} />
+                      </a>
+                      <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="View live">
+                        <ExternalLink size={20} />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
