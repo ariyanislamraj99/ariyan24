@@ -15,7 +15,7 @@ const HeroSection = () => {
             <div className="md:col-span-2 relative">
               <div className="aspect-[3/4] md:aspect-auto md:h-full">
                 <img
-                  src={profileAvatar}
+                  src={profileHero}
                   alt="Ariyan Islam Raj"
                   className="w-full h-full object-cover"
                 />
