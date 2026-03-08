@@ -1,5 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Code, Terminal, Globe, Cpu, Languages, Monitor, FileCode, FileType, Braces, Database, Hash } from "lucide-react";
+import { Code, Terminal, Globe, Cpu, Languages, FileCode, FileType, Braces, Database, Hash } from "lucide-react";
 
 const professionalSkills = [
   { name: "Problem Solving", level: 95 },
@@ -34,14 +34,6 @@ const languageSkills = [
   { name: "Hindi", level: 60 },
 ];
 
-const platformSkills = [
-  { name: "VS Code", level: 95 },
-  { name: "GitHub / Git", level: 92 },
-  { name: "Docker", level: 80 },
-  { name: "Figma", level: 78 },
-  { name: "Linux / Terminal", level: 85 },
-  { name: "AWS / Vercel", level: 80 },
-];
 
 interface SkillCategory {
   title: string;
@@ -56,7 +48,7 @@ const categories: SkillCategory[] = [
   { title: "Technical Skills", icon: Cpu, skills: technicalSkills, accentVar: "--secondary" },
   { title: "Coding Skills", icon: Code, skills: codingSkills, accentVar: "--accent", useCircles: true },
   { title: "Language Skills", icon: Languages, skills: languageSkills, accentVar: "--primary" },
-  { title: "Platform & Tools", icon: Monitor, skills: platformSkills, accentVar: "--secondary" },
+  
 ];
 
 const SkillBar = ({
