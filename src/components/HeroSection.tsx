@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient orbs */}
       <div className="glow-orb w-[600px] h-[600px] bg-primary top-[-10%] left-[-10%] animate-float animate-glow-pulse" />
       <div className="glow-orb w-[500px] h-[500px] bg-secondary bottom-[-10%] right-[-5%] animate-float-delayed animate-glow-pulse" />
