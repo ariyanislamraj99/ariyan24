@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Code, Terminal, Globe, Cpu, Languages, FileCode, FileType, Braces, Database, Hash, Lightbulb, Users, ClipboardList, MessageSquare, IterationCcw, Crown } from "lucide-react";
 
