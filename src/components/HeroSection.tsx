@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
-import profileAvatar from "@/assets/profile-avatar.jpg";
+import profileHero from "@/assets/profile-hero.png";
 
 const HeroSection = () => {
   return (
