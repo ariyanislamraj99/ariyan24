@@ -48,12 +48,13 @@ interface SkillCategory {
   icon: React.ElementType;
   skills: { name: string; level: number }[];
   accentVar: string;
+  useCircles?: boolean;
 }
 
 const categories: SkillCategory[] = [
   { title: "Professional Skills", icon: Globe, skills: professionalSkills, accentVar: "--primary" },
   { title: "Technical Skills", icon: Cpu, skills: technicalSkills, accentVar: "--secondary" },
-  { title: "Coding Skills", icon: Code, skills: codingSkills, accentVar: "--accent" },
+  { title: "Coding Skills", icon: Code, skills: codingSkills, accentVar: "--accent", useCircles: true },
   { title: "Language Skills", icon: Languages, skills: languageSkills, accentVar: "--primary" },
   { title: "Platform & Tools", icon: Monitor, skills: platformSkills, accentVar: "--secondary" },
 ];
