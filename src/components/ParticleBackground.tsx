@@ -87,9 +87,10 @@ const ParticleBackground = () => {
     <div className="fixed inset-0 z-0 pointer-events-none lg:left-[320px]">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
-        dpr={[1, 1.5]}
-        gl={{ antialias: false, alpha: true }}
+        dpr={[1, 1]}
+        gl={{ antialias: false, alpha: true, powerPreference: "low-power" }}
         style={{ background: "transparent" }}
+        frameloop="always"
       >
         <Particles />
       </Canvas>
