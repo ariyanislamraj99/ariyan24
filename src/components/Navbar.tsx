@@ -79,12 +79,13 @@ const Navbar = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className={`text-xs transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
+                    className={`flex items-center gap-1.5 text-xs transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
                       activeSection === link.href
                         ? "text-foreground after:w-full"
                         : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
+                    <link.icon size={14} />
                     {link.label}
                   </a>
                 </li>
