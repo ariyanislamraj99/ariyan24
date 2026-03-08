@@ -1,0 +1,6 @@
+import { useState } from "react"; import { ToolLayout, ToolInput, ToolOutput, ToolSelect } from "./ToolComponents";
+const shortcodes:Record<string,{template:string;fields:string[]}>={gallery:{template:'[gallery ids="{ids}" columns="{columns}"]',fields:["ids","columns"]},audio:{template:'[audio src="{src}"]',fields:["src"]},video:{template:'[video src="{src}" width="{width}" height="{height}"]',fields:["src","width","height"]},caption:{template:'[caption id="{id}" align="{align}" width="{width}"]{text}[/caption]',fields:["id","align","width","text"]}};
+const WpShortcodeGen = () => { const [type,sT]=useState("gallery"); const [vals,sV]=useState<Record<string,string>>({});
+  const sc=shortcodes[type]; let out=sc.template; sc.fields.forEach(f=>out=out.replace(`{${f}}`,vals[f]||""));
+  return <ToolLayout><ToolSelect label="Shortcode Type" value={type} onChange={t=>{sT(t);sV({})}} options={Object.keys(shortcodes).map(k=>({value:k,label:k.charAt(0).toUpperCase()+k.slice(1)}))} />{sc.fields.map(f=><ToolInput key={f} label={f} value={vals[f]||""} onChange={v=>sV(p=>({...p,[f]:v}))} placeholder={f} />)}<ToolOutput label="Shortcode" value={out} /></ToolLayout>; };
+export default WpShortcodeGen;
