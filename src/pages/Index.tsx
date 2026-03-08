@@ -55,7 +55,7 @@ const Index = () => {
 
       <ProfileSidebar />
 
-      <div className="lg:ml-[320px] pb-16 md:pb-0">
+      <div className="lg:ml-[320px] pb-20 md:pb-0">
         <Navbar />
         <HeroSection />
         <Suspense fallback={<SectionFallback />}>

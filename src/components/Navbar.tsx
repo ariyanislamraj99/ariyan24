@@ -17,6 +17,7 @@ const bottomNavLinks = [
   { label: "Home", href: "#home", icon: Home },
   { label: "Portfolio", href: "#portfolio", icon: FolderOpen },
   { label: "Tools", href: "/tools", icon: Wrench, isRoute: true },
+  { label: "Blog", href: "#blog", icon: BookOpen },
   { label: "Contact", href: "#contact", icon: Mail },
 ];
 
@@ -158,18 +159,12 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Bottom Navigation */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-strong border-t border-glass-border/10">
-        <div className="flex items-center justify-around py-2 px-2">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-strong border-t border-glass-border/10 safe-area-bottom">
+        <div className="flex items-center justify-around py-2 px-1">
           {bottomNavLinks.map((link) => {
             const isActive = activeSection === link.href;
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg transition-all duration-300 ${
-                  isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
+            const content = (
+              <>
                 <div
                   className={`p-1 rounded-lg transition-all duration-300 ${
                     isActive ? "gradient-bg shadow-[0_0_12px_hsl(var(--primary)/0.4)]" : ""
@@ -180,6 +175,18 @@ const Navbar = () => {
                 <span className={`text-[10px] font-medium ${isActive ? "gradient-text" : ""}`}>
                   {link.label}
                 </span>
+              </>
+            );
+            const cls = `flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-lg transition-all duration-300 ${
+              isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+            }`;
+            return (link as any).isRoute ? (
+              <Link key={link.href} to={link.href} className={cls}>
+                {content}
+              </Link>
+            ) : (
+              <a key={link.href} href={link.href} className={cls}>
+                {content}
               </a>
             );
           })}

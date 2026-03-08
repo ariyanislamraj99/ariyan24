@@ -293,7 +293,7 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Side preview cards */}
-          <div className="hidden md:flex justify-between absolute top-1/2 -translate-y-1/2 left-0 right-0 pointer-events-none px-0" style={{ perspective: 800 }}>
+          <div className="hidden lg:flex justify-between absolute top-1/2 -translate-y-1/2 left-0 right-0 pointer-events-none px-0" style={{ perspective: 800 }}>
             {[-1, 1].map((offset) => {
               const idx = (current + offset + testimonials.length) % testimonials.length;
               return (
