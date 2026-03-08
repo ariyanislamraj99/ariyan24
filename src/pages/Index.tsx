@@ -30,5 +30,6 @@ const Index = () => {
       <ScrollToTop />
     </div>
   );
+};
 
 export default Index;
