@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from "framer-motion";
-
+import { useIsMobile } from "@/hooks/use-mobile";
 const testimonials = [
   {
     name: "Sarah Chen",
