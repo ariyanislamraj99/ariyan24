@@ -60,51 +60,69 @@ const BlogSection = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
           {posts.map((post, i) => (
-            <article
+            <div
               key={post.title}
-              className="glass rounded-2xl overflow-hidden gradient-border group hover:shadow-glass-strong transition-all duration-500 hover:-translate-y-2 opacity-0 animate-slide-up"
+              className="[perspective:1200px] opacity-0 animate-slide-up"
               style={{ animationDelay: `${0.15 + i * 0.12}s` }}
             >
-              <div className="relative overflow-hidden aspect-[16/10]">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute top-3 left-3">
-                  <span className="text-xs font-medium px-3 py-1 rounded-full gradient-bg text-primary-foreground">
+              <div className="relative w-full h-[420px] [transform-style:preserve-3d] transition-transform duration-700 group hover:[transform:rotateY(180deg)]">
+                {/* Front */}
+                <article className="absolute inset-0 [backface-visibility:hidden] glass rounded-2xl overflow-hidden gradient-border">
+                  <div className="relative overflow-hidden aspect-[16/10]">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="text-xs font-medium px-3 py-1 rounded-full gradient-bg text-primary-foreground">
+                        {post.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-5 sm:p-6">
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
+                      <span className="flex items-center gap-1">
+                        <Calendar size={12} />
+                        {post.date}
+                      </span>
+                      <span>•</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                    <h3 className="text-base sm:text-lg font-semibold text-foreground leading-snug line-clamp-2">
+                      {post.title}
+                    </h3>
+                  </div>
+                </article>
+
+                {/* Back */}
+                <article className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] glass rounded-2xl overflow-hidden gradient-border flex flex-col justify-center p-6 sm:p-8">
+                  <span className="text-xs font-medium px-3 py-1 rounded-full gradient-bg text-primary-foreground w-fit mb-4">
                     {post.category}
                   </span>
-                </div>
+                  <h3 className="text-lg sm:text-xl font-bold gradient-text mb-3 leading-snug">
+                    {post.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground flex items-center gap-1">
+                      <Calendar size={12} />
+                      {post.date} • {post.readTime}
+                    </span>
+                    <a
+                      href="#"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-accent transition-colors"
+                    >
+                      Read More
+                      <ArrowRight size={14} />
+                    </a>
+                  </div>
+                </article>
               </div>
-
-              <div className="p-5 sm:p-6">
-                <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                  <span className="flex items-center gap-1">
-                    <Calendar size={12} />
-                    {post.date}
-                  </span>
-                  <span>•</span>
-                  <span>{post.readTime}</span>
-                </div>
-
-                <h3 className="text-base sm:text-lg font-semibold mb-2 text-foreground leading-snug line-clamp-2 group-hover:gradient-text transition-all duration-300">
-                  {post.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
-                  {post.excerpt}
-                </p>
-
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-accent transition-colors"
-                >
-                  Read More
-                  <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-                </a>
-              </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>
