@@ -17,6 +17,7 @@ const ExperienceSection = lazy(() => import("@/components/ExperienceSection"));
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
 const BlogSection = lazy(() => import("@/components/BlogSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
+const TrustedBySection = lazy(() => import("@/components/TrustedBySection"));
 const ScrollToTop = lazy(() => import("@/components/ScrollToTop"));
 
 const SectionFallback = () => (
@@ -57,6 +58,9 @@ const Index = () => {
       <div className="lg:ml-[320px] pb-16 md:pb-0">
         <Navbar />
         <HeroSection />
+        <Suspense fallback={<SectionFallback />}>
+          <TrustedBySection />
+        </Suspense>
         <Suspense fallback={<SectionFallback />}>
           <ServicesSection />
         </Suspense>

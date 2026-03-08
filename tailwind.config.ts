@@ -102,6 +102,10 @@ export default {
           "0%": { width: "0%" },
           "100%": { width: "var(--progress-width)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -110,6 +114,7 @@ export default {
         "slide-up": "slide-up 0.8s ease-out forwards",
         "scale-in": "scale-in 0.5s ease-out forwards",
         "progress-fill": "progress-fill 1.5s ease-out forwards",
+        marquee: "marquee 30s linear infinite",
       },
     },
   },
