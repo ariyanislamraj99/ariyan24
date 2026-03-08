@@ -59,10 +59,10 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Navbar - only shows on the main content area */}
+      {/* Top Navbar - glassmorphism with border radius */}
       <nav
-        className={`fixed top-0 left-0 right-0 lg:left-[320px] z-50 transition-all duration-500 ${
-          scrolled ? "glass-strong py-2" : "py-3 lg:py-4"
+        className={`fixed top-4 left-4 right-4 lg:left-[336px] z-50 transition-all duration-500 rounded-2xl border border-glass-border/20 backdrop-blur-xl bg-glass/60 shadow-glass ${
+          scrolled ? "py-2" : "py-3"
         }`}
       >
         <div className="flex items-center justify-between px-4 sm:px-6">
