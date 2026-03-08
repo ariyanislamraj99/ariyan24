@@ -1,4 +1,23 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
+
+const useCountUp = (target: number, inView: boolean, duration = 1500, delay = 0) => {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    const timeout = setTimeout(() => {
+      const start = performance.now();
+      const step = (now: number) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setCount(Math.round(eased * target));
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }, delay * 1000);
+    return () => clearTimeout(timeout);
+  }, [inView, target, duration, delay]);
+  return count;
+};
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Code, Terminal, Globe, Cpu, Languages, FileCode, FileType, Braces, Database, Hash, Lightbulb, Users, ClipboardList, MessageSquare, IterationCcw, Crown } from "lucide-react";
 
@@ -34,6 +53,10 @@ const languageSkills = [
   { name: "English", level: 85, flag: "https://flagcdn.com/w40/gb.png" },
   { name: "Hindi", level: 60, flag: "https://flagcdn.com/w40/in.png" },
 ];
+const CountUpLabel = ({ level, delay, inView }: { level: number; delay: number; inView: boolean }) => {
+  const count = useCountUp(level, inView, 1500, delay);
+  return <span className="text-xs font-bold text-foreground">{count}%</span>;
+};
 
 
 interface SkillCategory {
@@ -68,30 +91,33 @@ const SkillBar = ({
   flag?: string;
   icon?: React.ElementType;
   inView: boolean;
-}) => (
-  <div className={`transition-all duration-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: `${delay}s` }}>
-    <div className="flex justify-between mb-1.5">
-      <span className="text-sm font-medium text-foreground flex items-center gap-2">
-        {Icon && <Icon size={14} className="text-muted-foreground" />}
-        {flag && <img src={flag} alt={`${name} flag`} className="w-5 h-3.5 object-cover rounded-sm shadow-sm" loading="lazy" />}
-        {name}
-      </span>
-      <span className="text-xs text-muted-foreground">{level}%</span>
+}) => {
+  const count = useCountUp(level, inView, 1500, delay + 0.2);
+  return (
+    <div className={`transition-all duration-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: `${delay}s` }}>
+      <div className="flex justify-between mb-1.5">
+        <span className="text-sm font-medium text-foreground flex items-center gap-2">
+          {Icon && <Icon size={14} className="text-muted-foreground" />}
+          {flag && <img src={flag} alt={`${name} flag`} className="w-5 h-3.5 object-cover rounded-sm shadow-sm" loading="lazy" />}
+          {name}
+        </span>
+        <span className="text-xs text-muted-foreground">{count}%</span>
+      </div>
+      <div className="h-2 rounded-full bg-muted overflow-hidden">
+        <div
+          className="h-full rounded-full transition-all duration-[1.5s] ease-out"
+          style={
+            {
+              width: inView ? `${level}%` : "0%",
+              transitionDelay: `${delay + 0.2}s`,
+              background: `linear-gradient(90deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)))`,
+            } as React.CSSProperties
+          }
+        />
+      </div>
     </div>
-    <div className="h-2 rounded-full bg-muted overflow-hidden">
-      <div
-        className="h-full rounded-full transition-all duration-[1.5s] ease-out"
-        style={
-          {
-            width: inView ? `${level}%` : "0%",
-            transitionDelay: `${delay + 0.2}s`,
-            background: `linear-gradient(90deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)))`,
-          } as React.CSSProperties
-        }
-      />
-    </div>
-  </div>
-);
+  );
+};
 
 const CircleSkill = ({
   name,
@@ -141,7 +167,7 @@ const CircleSkill = ({
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           {Icon && <Icon size={14} className="text-muted-foreground mb-0.5" />}
-          <span className="text-xs font-bold text-foreground">{level}%</span>
+          <CountUpLabel level={level} delay={delay} inView={inView} />
         </div>
       </div>
       <span className="text-xs text-muted-foreground text-center leading-tight">{name}</span>
