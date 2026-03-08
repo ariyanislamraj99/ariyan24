@@ -86,7 +86,7 @@ const ExperienceSection = () => {
                   {/* Timeline dot */}
                   <div className="absolute -left-[calc(1.5rem+5px)] top-1.5 w-2.5 h-2.5 rounded-full gradient-bg shadow-[0_0_8px_hsl(var(--primary)/0.5)]" />
 
-                  <div className="glass rounded-xl p-6 gradient-border hover:shadow-glass-strong transition-all duration-500 hover:-translate-y-1">
+                  <div className="glass rounded-xl p-6 gradient-border hover:shadow-glass-strong transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]">
                     <p className="text-xs text-primary font-medium tracking-wider uppercase mb-1">
                       {item.period}
                     </p>
@@ -118,7 +118,7 @@ const ExperienceSection = () => {
                   {/* Timeline dot */}
                   <div className="absolute -left-[calc(1.5rem+5px)] top-1.5 w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_8px_hsl(var(--accent)/0.5)]" />
 
-                  <div className="glass rounded-xl p-6 gradient-border hover:shadow-glass-strong transition-all duration-500 hover:-translate-y-1">
+                  <div className="glass rounded-xl p-6 gradient-border hover:shadow-glass-strong transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent/60 hover:bg-accent/5 active:scale-[0.98]">
                     <p className="text-xs text-accent font-medium tracking-wider uppercase mb-1">
                       {item.period}
                     </p>
