@@ -1,9 +1,11 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState, useEffect, useCallback } from "react";
+import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import ProfileSidebar from "@/components/ProfileSidebar";
 import HeroSection from "@/components/HeroSection";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Footer from "@/components/Footer";
+import TypingLoader from "@/components/TypingLoader";
 
 // Lazy load heavy/below-fold sections
 const ParticleBackground = lazy(() => import("@/components/ParticleBackground"));
@@ -24,6 +26,25 @@ const SectionFallback = () => (
 );
 
 const Index = () => {
+  const [loading, setLoading] = useState(true);
+
+  const handleLoadComplete = useCallback(() => {
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      toast("👨‍💻 Welcome to my portfolio!", {
+        description: "Built with React, TypeScript & Tailwind CSS",
+        duration: 5000,
+      });
+    }
+  }, [loading]);
+
+  if (loading) {
+    return <TypingLoader onComplete={handleLoadComplete} />;
+  }
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <ScrollIndicator />
