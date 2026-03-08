@@ -61,8 +61,8 @@ const Navbar = () => {
     <>
       {/* Top Navbar - only shows on the main content area */}
       <nav
-        className={`fixed top-0 right-0 left-0 lg:left-[320px] z-50 transition-all duration-500 ${
-          scrolled ? "glass-strong py-2" : "py-4"
+        className={`fixed top-0 left-0 right-0 lg:left-[320px] z-50 transition-all duration-500 ${
+          scrolled ? "glass-strong py-2" : "py-3 lg:py-4"
         }`}
       >
         <div className="flex items-center justify-between px-4 sm:px-6">
@@ -70,8 +70,8 @@ const Navbar = () => {
           <a href="#home" className="lg:hidden text-lg font-display font-bold gradient-text">
             Ariyan
           </a>
-          {/* Desktop: show nav links */}
-          <div className="hidden lg:block" />
+          {/* Desktop: spacer for centering */}
+          <div className="hidden lg:block flex-1" />
 
           <div className="hidden md:flex items-center gap-6">
             <ul className="flex items-center gap-6">
