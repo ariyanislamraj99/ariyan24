@@ -67,7 +67,7 @@ const SkillBar = ({
   <div className="opacity-0 animate-fade-in" style={{ animationDelay: `${delay}s` }}>
     <div className="flex justify-between mb-1.5">
       <span className="text-sm font-medium text-foreground flex items-center gap-2">
-        {flag && <span className="text-base">{flag}</span>}
+        {flag && <img src={flag} alt={`${name} flag`} className="w-5 h-3.5 object-cover rounded-sm shadow-sm" loading="lazy" />}
         {name}
       </span>
       <span className="text-xs text-muted-foreground">{level}%</span>
