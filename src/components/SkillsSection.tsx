@@ -151,9 +151,20 @@ const CircleSkill = ({
 
 const SkillsSection = () => {
   const ref = useScrollReveal();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="skills" className="relative py-16 md:py-24">
+    <section id="skills" className="relative py-16 md:py-24" ref={sectionRef}>
       <div className="glow-orb w-[500px] h-[500px] bg-secondary bottom-[10%] right-[-10%] animate-float-delayed animate-glow-pulse" />
       <div className="glow-orb w-[300px] h-[300px] bg-accent top-[20%] left-[-5%] animate-float animate-glow-pulse" />
 
