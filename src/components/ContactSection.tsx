@@ -44,11 +44,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative py-24 md:py-32">
+    <section id="contact" className="relative py-16 md:py-24">
       <div className="glow-orb w-[400px] h-[400px] bg-primary bottom-[5%] left-[10%] animate-float animate-glow-pulse" />
 
-      <div className="container mx-auto px-6 relative z-10" ref={ref}>
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
+        <div className="text-center mb-10 md:mb-14">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Get In <span className="gradient-text">Touch</span>
           </h2>
@@ -57,7 +57,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-5 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {/* Info */}
           <div className="md:col-span-2 space-y-6">
             {contactInfo.map((item, i) => (
@@ -77,7 +77,7 @@ const ContactSection = () => {
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="md:col-span-3 glass rounded-2xl p-8 gradient-border opacity-0 animate-slide-up"
+            className="md:col-span-3 glass rounded-2xl p-6 sm:p-8 gradient-border opacity-0 animate-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
             <div className="space-y-5">

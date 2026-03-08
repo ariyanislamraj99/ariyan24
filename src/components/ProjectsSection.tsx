@@ -32,11 +32,11 @@ const ProjectsSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <section id="projects" className="relative py-24 md:py-32">
+    <section id="projects" className="relative py-16 md:py-24">
       <div className="glow-orb w-[400px] h-[400px] bg-accent top-[20%] left-[-5%] animate-float animate-glow-pulse" />
 
-      <div className="container mx-auto px-6 relative z-10" ref={ref}>
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
+        <div className="text-center mb-10 md:mb-14">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
@@ -45,7 +45,7 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {projects.map((project, i) => (
             <div
               key={project.title}
@@ -55,7 +55,7 @@ const ProjectsSection = () => {
               {/* Color bar */}
               <div className={`h-1 w-full bg-gradient-to-r ${project.gradient}`} />
 
-              <div className="p-8">
+              <div className="p-6 sm:p-8">
                 <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:gradient-text transition-all duration-300">
                   {project.title}
                 </h3>

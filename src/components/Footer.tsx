@@ -1,8 +1,8 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => (
-  <footer className="glass-subtle py-8 mt-12">
-    <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+  <footer className="glass-subtle py-6 mt-8">
+    <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <p className="text-sm text-muted-foreground">
         © 2026 Ariyan Islam Raj.
       </p>

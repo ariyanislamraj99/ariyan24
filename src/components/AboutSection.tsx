@@ -23,9 +23,9 @@ const AboutSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <section id="about" className="relative py-24 md:py-32">
-      <div className="container mx-auto px-6" ref={ref}>
-        <div className="text-center mb-16">
+    <section id="about" className="relative py-16 md:py-24">
+      <div className="container mx-auto px-4 sm:px-6" ref={ref}>
+        <div className="text-center mb-10 md:mb-14">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             About <span className="gradient-text">Me</span>
           </h2>

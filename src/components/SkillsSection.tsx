@@ -140,12 +140,12 @@ const SkillsSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <section id="skills" className="relative py-24 md:py-32">
+    <section id="skills" className="relative py-16 md:py-24">
       <div className="glow-orb w-[500px] h-[500px] bg-secondary bottom-[10%] right-[-10%] animate-float-delayed animate-glow-pulse" />
       <div className="glow-orb w-[300px] h-[300px] bg-accent top-[20%] left-[-5%] animate-float animate-glow-pulse" />
 
-      <div className="container mx-auto px-6 relative z-10" ref={ref}>
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
+        <div className="text-center mb-10 md:mb-14">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             My <span className="gradient-text">Skills</span>
           </h2>
@@ -154,7 +154,7 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {categories.map((cat, ci) => (
             <div
               key={cat.title}
