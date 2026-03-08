@@ -163,7 +163,7 @@ const TestimonialsSection = () => {
   const t = testimonials[current];
 
   return (
-    <section id="testimonials" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="testimonials" className="relative py-16 md:py-24 overflow-hidden">
       <div className="glow-orb w-[350px] h-[350px] bg-secondary top-[10%] right-[-5%] animate-float animate-glow-pulse" />
       <div className="glow-orb w-[250px] h-[250px] bg-primary bottom-[15%] left-[-3%] animate-float-delayed animate-glow-pulse" />
 
