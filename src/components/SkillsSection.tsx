@@ -161,7 +161,10 @@ const CircleSkill = ({
             style={{ filter: "drop-shadow(0 0 4px hsl(var(--accent) / 0.4))", transitionDelay: `${delay}s` }}
           />
         </svg>
-        <CircleLabel level={level} delay={delay} inView={inView} Icon={Icon} />
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          {Icon && <Icon size={14} className="text-muted-foreground mb-0.5" />}
+          <CountUpLabel level={level} delay={delay} inView={inView} />
+        </div>
       </div>
       <span className="text-xs text-muted-foreground text-center leading-tight">{name}</span>
     </div>
