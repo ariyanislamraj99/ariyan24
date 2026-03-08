@@ -1,0 +1,3 @@
+import { useState } from "react"; import { ToolLayout, ToolInput } from "./ToolComponents";
+const MetaLengthChecker = () => { const [title,sT]=useState(""); const [desc,sD]=useState(""); const tc=title.length; const dc=desc.length; const tOk=tc<=60; const dOk=dc<=160; return <ToolLayout><ToolInput label="Title Tag" value={title} onChange={sT} placeholder="Your page title" /><p className={`text-sm ${tOk?"text-green-500":"text-red-500"}`}>{tc}/60 characters {tOk?"✓":"⚠ Too long"}</p><ToolInput label="Meta Description" value={desc} onChange={sD} placeholder="Your meta description" /><p className={`text-sm ${dOk?"text-green-500":"text-red-500"}`}>{dc}/160 characters {dOk?"✓":"⚠ Too long"}</p></ToolLayout>; };
+export default MetaLengthChecker;
