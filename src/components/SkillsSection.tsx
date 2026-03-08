@@ -55,6 +55,7 @@ const SkillBar = ({
   name,
   level,
   accentVar,
+  icon: Icon,
   delay,
   flag,
 }: {
