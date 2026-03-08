@@ -29,9 +29,9 @@ const codingSkills = [
 ];
 
 const languageSkills = [
-  { name: "Bangla", level: 100, flag: "🇧🇩" },
-  { name: "English", level: 85, flag: "🇬🇧" },
-  { name: "Hindi", level: 60, flag: "🇮🇳" },
+  { name: "Bangla", level: 100, flag: "https://flagcdn.com/w40/bd.png" },
+  { name: "English", level: 85, flag: "https://flagcdn.com/w40/gb.png" },
+  { name: "Hindi", level: 60, flag: "https://flagcdn.com/w40/in.png" },
 ];
 
 
