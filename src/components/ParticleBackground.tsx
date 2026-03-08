@@ -2,7 +2,7 @@ import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-const PARTICLE_COUNT = 200;
+const PARTICLE_COUNT = 120;
 
 const Particles = () => {
   const meshRef = useRef<THREE.Points>(null);
