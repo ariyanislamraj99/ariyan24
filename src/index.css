@@ -138,6 +138,7 @@ html {
     scrollbar-color: hsl(var(--primary)) hsl(var(--background));
     scrollbar-width: thin;
   }
+}
 
 @layer components {
   .glass {
