@@ -16,6 +16,7 @@ const navLinks = [
 const bottomNavLinks = [
   { label: "Home", href: "#home", icon: Home },
   { label: "Portfolio", href: "#portfolio", icon: FolderOpen },
+  { label: "Tools", href: "/tools", icon: Wrench, isRoute: true },
   { label: "Blog", href: "#blog", icon: BookOpen },
   { label: "Contact", href: "#contact", icon: Mail },
 ];
