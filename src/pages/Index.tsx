@@ -1,5 +1,8 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import ProfileSidebar from "@/components/ProfileSidebar";
+
+const ParticleBackground = lazy(() => import("@/components/ParticleBackground"));
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import PortfolioSection from "@/components/PortfolioSection";
