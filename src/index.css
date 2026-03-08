@@ -138,6 +138,28 @@ html {
     animation: scrollbar-gradient 2s ease infinite;
   }
 
+  /* Sidebar gradient scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: linear-gradient(180deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)));
+    background-size: 100% 200%;
+    animation: scrollbar-gradient 3s ease infinite;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)), hsl(var(--gradient-start)));
+    background-size: 100% 200%;
+    animation: scrollbar-gradient 2s ease infinite;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--gradient-mid)) transparent;
+
   html {
     scrollbar-color: hsl(260 80% 65%) hsl(var(--background));
     scrollbar-width: thin;
