@@ -1,0 +1,6 @@
+import { useState } from "react"; import { ToolLayout, ToolInput, ToolOutput, ToolButton } from "./ToolComponents";
+const toTs=(obj:any,name:string,indent:string):string=>{ if(Array.isArray(obj)){ if(!obj.length) return `${indent}${name}: any[];\n`; return toTs(obj[0],name+"Item",indent).replace(name+"Item","")+`${indent}${name}: ${typeof obj[0]==="object"?"Array<{\n"+toTs(obj[0],"",indent+"  ")+indent+"}>":"("+typeof obj[0]+")[]"};\n`; } if(typeof obj==="object"&&obj!==null){ let r=`${indent}interface ${name} {\n`; for(const[k,v]of Object.entries(obj)){ const t=v===null?"any":Array.isArray(v)?"any[]":typeof v==="object"?k.charAt(0).toUpperCase()+k.slice(1):typeof v; r+=`${indent}  ${k}: ${t};\n`; } return r+`${indent}}\n`; } return `${indent}${name}: ${typeof obj};\n`; };
+const JsonToTypescript = () => { const [input,sI]=useState(""); const [o,sO]=useState("");
+  const convert=()=>{ try { const json=JSON.parse(input); sO(toTs(json,"Root","").trim()); } catch { sO("Invalid JSON"); } };
+  return <ToolLayout><ToolInput label="JSON" value={input} onChange={sI} multiline rows={6} placeholder='{"name":"John","age":30}' /><ToolButton onClick={convert}>Convert</ToolButton><ToolOutput label="TypeScript" value={o} /></ToolLayout>; };
+export default JsonToTypescript;
