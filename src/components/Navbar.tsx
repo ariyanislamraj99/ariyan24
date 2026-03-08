@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon, Home, Briefcase, FolderOpen, Code, BookOpen, Mail } from "lucide-react";
+import { Menu, X, Sun, Moon, Home, Briefcase, FolderOpen, Code, BookOpen, Mail, Wrench } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home", icon: Home },
@@ -8,13 +8,14 @@ const navLinks = [
   { label: "Projects", href: "#projects", icon: Code },
   { label: "Skills", href: "#skills", icon: Code },
   { label: "Blog", href: "#blog", icon: BookOpen },
+  { label: "Tools", href: "/tools", icon: Wrench, isRoute: true },
   { label: "Contact", href: "#contact", icon: Mail },
 ];
 
 const bottomNavLinks = [
   { label: "Home", href: "#home", icon: Home },
   { label: "Portfolio", href: "#portfolio", icon: FolderOpen },
-  { label: "Blog", href: "#blog", icon: BookOpen },
+  { label: "Tools", href: "/tools", icon: Wrench, isRoute: true },
   { label: "Contact", href: "#contact", icon: Mail },
 ];
 
