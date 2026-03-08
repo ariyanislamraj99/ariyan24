@@ -90,13 +90,13 @@ const Navbar = () => {
                   ) : (
                     <a
                       href={link.href}
-                      className={`flex items-center gap-1.5 text-xs transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
+                      className={`flex items-center gap-1.5 text-xs transition-all duration-300 relative px-2 py-1 rounded-md after:content-[''] after:absolute after:bottom-[-2px] after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:rounded-full after:transition-all after:duration-500 ${
                         activeSection === link.href
-                          ? "text-foreground after:w-full"
-                          : "text-muted-foreground hover:text-foreground"
+                          ? "text-foreground after:w-3/4 after:bg-gradient-to-r after:from-[hsl(var(--gradient-start))] after:via-[hsl(var(--gradient-mid))] after:to-[hsl(var(--gradient-end))] bg-muted/40"
+                          : "text-muted-foreground hover:text-foreground after:w-0 hover:after:w-1/2 after:bg-primary"
                       }`}
                     >
-                      <link.icon size={14} />
+                      <link.icon size={14} className={activeSection === link.href ? "text-primary" : ""} />
                       {link.label}
                     </a>
                   )}
