@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Sun, Moon, Home, Briefcase, FolderOpen, Code, BookOpen, Mail, Wrench } from "lucide-react";
 
 const navLinks = [
