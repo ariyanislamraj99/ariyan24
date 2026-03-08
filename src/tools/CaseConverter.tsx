@@ -1,0 +1,4 @@
+import { useState } from "react"; import { ToolLayout, ToolInput, ToolOutput, ToolButton } from "./ToolComponents";
+const CaseConverter = () => { const [t,sT]=useState(""); const [o,sO]=useState("");
+  return <ToolLayout><ToolInput label="Text" value={t} onChange={sT} multiline /><div className="flex flex-wrap gap-2"><ToolButton onClick={()=>sO(t.toUpperCase())}>UPPERCASE</ToolButton><ToolButton onClick={()=>sO(t.toLowerCase())} variant="secondary">lowercase</ToolButton><ToolButton onClick={()=>sO(t.replace(/\b\w/g,c=>c.toUpperCase()))} variant="secondary">Title Case</ToolButton><ToolButton onClick={()=>sO(t.charAt(0).toUpperCase()+t.slice(1).toLowerCase())} variant="secondary">Sentence case</ToolButton><ToolButton onClick={()=>sO(t.split("").map((c,i)=>i%2?c.toLowerCase():c.toUpperCase()).join(""))} variant="secondary">aLtErNaTe</ToolButton></div><ToolOutput label="Result" value={o} /></ToolLayout>; };
+export default CaseConverter;

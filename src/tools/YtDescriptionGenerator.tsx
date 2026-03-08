@@ -1,0 +1,5 @@
+import { useState } from "react"; import { ToolLayout, ToolInput, ToolOutput, ToolButton } from "./ToolComponents";
+const YtDescriptionGenerator = () => { const [title,sT]=useState(""); const [topic,sTo]=useState(""); const [o,sO]=useState("");
+  const gen=()=>{ sO(`${title}\n\nIn this video, I cover everything you need to know about ${topic}. Whether you're a beginner or advanced, this guide will help you level up.\n\n⏱ Timestamps:\n0:00 - Introduction\n1:00 - Overview\n3:00 - Deep Dive\n8:00 - Examples\n12:00 - Summary\n\n🔗 Resources & Links:\n• Website: https://\n• GitHub: https://github.com/\n\n📱 Follow Me:\n• Twitter: https://twitter.com/\n• Instagram: https://instagram.com/\n\n#${topic.replace(/\s+/g,"")} #tutorial #programming`); };
+  return <ToolLayout><ToolInput label="Video Title" value={title} onChange={sT} placeholder="My Video Title" /><ToolInput label="Topic" value={topic} onChange={sTo} placeholder="React hooks" /><ToolButton onClick={gen}>Generate Template</ToolButton><ToolOutput label="Description" value={o} /></ToolLayout>; };
+export default YtDescriptionGenerator;

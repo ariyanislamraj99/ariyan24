@@ -1,0 +1,5 @@
+import { useState } from "react"; import { ToolLayout, ToolInput, ToolButton } from "./ToolComponents";
+const YtThumbnailDownloader = () => { const [url,sU]=useState(""); const [thumbs,sT]=useState<string[]>([]);
+  const extract=()=>{ const m=url.match(/(?:v=|youtu\.be\/|embed\/)([a-zA-Z0-9_-]{11})/); if(!m) return; const id=m[1]; sT([`https://img.youtube.com/vi/${id}/maxresdefault.jpg`,`https://img.youtube.com/vi/${id}/hqdefault.jpg`,`https://img.youtube.com/vi/${id}/mqdefault.jpg`,`https://img.youtube.com/vi/${id}/sddefault.jpg`]); };
+  return <ToolLayout><ToolInput label="YouTube URL" value={url} onChange={sU} placeholder="https://youtube.com/watch?v=..." /><ToolButton onClick={extract}>Get Thumbnails</ToolButton>{thumbs.map((t,i)=><div key={i} className="space-y-1"><img src={t} alt={`Thumb ${i}`} className="w-full rounded border border-glass-border/20" /><a href={t} target="_blank" rel="noopener" className="text-xs text-primary hover:underline">Download ({["Max","HQ","MQ","SD"][i]})</a></div>)}</ToolLayout>; };
+export default YtThumbnailDownloader;
