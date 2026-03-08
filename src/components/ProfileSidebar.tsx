@@ -1,6 +1,6 @@
 import { Github, Linkedin, Twitter, Mail, MapPin, Phone, Download, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileAvatar from "@/assets/profile-avatar.jpg";
+import profileAvatar from "@/assets/vcard-photo.jpg";
 
 const socialLinks = [
   { icon: Github, href: "#", label: "GitHub" },
