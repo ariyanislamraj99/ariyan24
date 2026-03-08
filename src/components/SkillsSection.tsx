@@ -94,10 +94,12 @@ const CircleSkill = ({
   name,
   level,
   delay,
+  icon: Icon,
 }: {
   name: string;
   level: number;
   delay: number;
+  icon?: React.ElementType;
 }) => {
   const circumference = 2 * Math.PI * 40;
   const offset = circumference - (level / 100) * circumference;
@@ -132,8 +134,9 @@ const CircleSkill = ({
             style={{ filter: "drop-shadow(0 0 4px hsl(var(--accent) / 0.4))" }}
           />
         </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-sm font-bold text-foreground">{level}%</span>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          {Icon && <Icon size={14} className="text-muted-foreground mb-0.5" />}
+          <span className="text-xs font-bold text-foreground">{level}%</span>
         </div>
       </div>
       <span className="text-xs text-muted-foreground text-center leading-tight">{name}</span>
