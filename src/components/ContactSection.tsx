@@ -14,7 +14,7 @@ const contactSchema = z.object({
 const contactInfo = [
   { icon: Mail, label: "ariyanislamraj@gmail.com" },
   { icon: MapPin, label: "Bangladesh" },
-  { icon: Phone, label: "+880 1XXX-XXXXXX" },
+  { icon: Phone, label: "+880 1810-912990" },
 ];
 
 const ContactSection = () => {
