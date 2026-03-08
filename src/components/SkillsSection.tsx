@@ -53,6 +53,10 @@ const languageSkills = [
   { name: "English", level: 85, flag: "https://flagcdn.com/w40/gb.png" },
   { name: "Hindi", level: 60, flag: "https://flagcdn.com/w40/in.png" },
 ];
+const CountUpLabel = ({ level, delay, inView }: { level: number; delay: number; inView: boolean }) => {
+  const count = useCountUp(level, inView, 1500, delay);
+  return <span className="text-xs font-bold text-foreground">{count}%</span>;
+};
 
 
 interface SkillCategory {
