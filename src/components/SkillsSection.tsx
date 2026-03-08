@@ -11,12 +11,12 @@ const professionalSkills = [
 ];
 
 const technicalSkills = [
-  { name: "React / Next.js", level: 95 },
-  { name: "Node.js / Express", level: 90 },
-  { name: "TypeScript", level: 92 },
-  { name: "REST API / GraphQL", level: 88 },
-  { name: "Database Design", level: 85 },
-  { name: "Cloud / DevOps", level: 80 },
+  { name: "React / Next.js", level: 95, icon: Braces },
+  { name: "Node.js / Express", level: 90, icon: Terminal },
+  { name: "TypeScript", level: 92, icon: FileType },
+  { name: "REST API / GraphQL", level: 88, icon: Globe },
+  { name: "Database Design", level: 85, icon: Database },
+  { name: "Cloud / DevOps", level: 80, icon: Cpu },
 ];
 
 const codingSkills = [
@@ -55,6 +55,7 @@ const SkillBar = ({
   name,
   level,
   accentVar,
+  icon: Icon,
   delay,
   flag,
 }: {
@@ -63,10 +64,12 @@ const SkillBar = ({
   accentVar: string;
   delay: number;
   flag?: string;
+  icon?: React.ElementType;
 }) => (
   <div className="opacity-0 animate-fade-in" style={{ animationDelay: `${delay}s` }}>
     <div className="flex justify-between mb-1.5">
       <span className="text-sm font-medium text-foreground flex items-center gap-2">
+        {Icon && <Icon size={14} className="text-muted-foreground" />}
         {flag && <img src={flag} alt={`${name} flag`} className="w-5 h-3.5 object-cover rounded-sm shadow-sm" loading="lazy" />}
         {name}
       </span>
