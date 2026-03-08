@@ -87,30 +87,33 @@ const SkillBar = ({
   flag?: string;
   icon?: React.ElementType;
   inView: boolean;
-}) => (
-  <div className={`transition-all duration-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: `${delay}s` }}>
-    <div className="flex justify-between mb-1.5">
-      <span className="text-sm font-medium text-foreground flex items-center gap-2">
-        {Icon && <Icon size={14} className="text-muted-foreground" />}
-        {flag && <img src={flag} alt={`${name} flag`} className="w-5 h-3.5 object-cover rounded-sm shadow-sm" loading="lazy" />}
-        {name}
-      </span>
-      <span className="text-xs text-muted-foreground">{level}%</span>
+}) => {
+  const count = useCountUp(level, inView, 1500, delay + 0.2);
+  return (
+    <div className={`transition-all duration-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: `${delay}s` }}>
+      <div className="flex justify-between mb-1.5">
+        <span className="text-sm font-medium text-foreground flex items-center gap-2">
+          {Icon && <Icon size={14} className="text-muted-foreground" />}
+          {flag && <img src={flag} alt={`${name} flag`} className="w-5 h-3.5 object-cover rounded-sm shadow-sm" loading="lazy" />}
+          {name}
+        </span>
+        <span className="text-xs text-muted-foreground">{count}%</span>
+      </div>
+      <div className="h-2 rounded-full bg-muted overflow-hidden">
+        <div
+          className="h-full rounded-full transition-all duration-[1.5s] ease-out"
+          style={
+            {
+              width: inView ? `${level}%` : "0%",
+              transitionDelay: `${delay + 0.2}s`,
+              background: `linear-gradient(90deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)))`,
+            } as React.CSSProperties
+          }
+        />
+      </div>
     </div>
-    <div className="h-2 rounded-full bg-muted overflow-hidden">
-      <div
-        className="h-full rounded-full transition-all duration-[1.5s] ease-out"
-        style={
-          {
-            width: inView ? `${level}%` : "0%",
-            transitionDelay: `${delay + 0.2}s`,
-            background: `linear-gradient(90deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)))`,
-          } as React.CSSProperties
-        }
-      />
-    </div>
-  </div>
-);
+  );
+};
 
 const CircleSkill = ({
   name,
