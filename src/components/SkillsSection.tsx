@@ -1,5 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Code, Terminal, Globe, Cpu, Languages, Monitor } from "lucide-react";
+import { Code, Terminal, Globe, Cpu, Languages, Monitor, FileCode, FileType, Braces, Database, Hash } from "lucide-react";
 
 const professionalSkills = [
   { name: "Problem Solving", level: 95 },
@@ -20,12 +20,12 @@ const technicalSkills = [
 ];
 
 const codingSkills = [
-  { name: "JavaScript", level: 95 },
-  { name: "TypeScript", level: 92 },
-  { name: "Python", level: 80 },
-  { name: "HTML / CSS", level: 95 },
-  { name: "SQL", level: 85 },
-  { name: "C / C++", level: 70 },
+  { name: "JavaScript", level: 95, icon: FileCode },
+  { name: "TypeScript", level: 92, icon: FileType },
+  { name: "Python", level: 80, icon: Terminal },
+  { name: "HTML / CSS", level: 95, icon: Code },
+  { name: "SQL", level: 85, icon: Database },
+  { name: "C / C++", level: 70, icon: Hash },
 ];
 
 const languageSkills = [
@@ -94,10 +94,12 @@ const CircleSkill = ({
   name,
   level,
   delay,
+  icon: Icon,
 }: {
   name: string;
   level: number;
   delay: number;
+  icon?: React.ElementType;
 }) => {
   const circumference = 2 * Math.PI * 40;
   const offset = circumference - (level / 100) * circumference;
@@ -132,8 +134,9 @@ const CircleSkill = ({
             style={{ filter: "drop-shadow(0 0 4px hsl(var(--accent) / 0.4))" }}
           />
         </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-sm font-bold text-foreground">{level}%</span>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          {Icon && <Icon size={14} className="text-muted-foreground mb-0.5" />}
+          <span className="text-xs font-bold text-foreground">{level}%</span>
         </div>
       </div>
       <span className="text-xs text-muted-foreground text-center leading-tight">{name}</span>
