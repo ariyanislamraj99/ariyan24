@@ -1,5 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Code, Terminal, Globe, Cpu, Languages, Monitor } from "lucide-react";
+import { Code, Terminal, Globe, Cpu, Languages, Monitor, FileCode, FileType, Braces, Database, Hash } from "lucide-react";
 
 const professionalSkills = [
   { name: "Problem Solving", level: 95 },
