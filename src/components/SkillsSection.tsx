@@ -220,6 +220,7 @@ const SkillsSection = () => {
                       {...skill}
                       accentVar={cat.accentVar}
                       delay={0.3 + ci * 0.1 + si * 0.06}
+                      inView={inView}
                     />
                   ))}
                 </div>
