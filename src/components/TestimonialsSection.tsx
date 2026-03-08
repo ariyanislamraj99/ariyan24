@@ -136,7 +136,11 @@ const TestimonialsSection = () => {
     return () => clearInterval(timer);
   }, [paginate]);
 
-  const variants = {
+  const variants = isMobile ? {
+    enter: { opacity: 0 },
+    center: { opacity: 1 },
+    exit: { opacity: 0 },
+  } : {
     enter: (d: number) => ({
       x: d > 0 ? 200 : -200,
       rotateY: d > 0 ? 45 : -45,
