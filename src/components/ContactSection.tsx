@@ -12,9 +12,9 @@ const contactSchema = z.object({
 });
 
 const contactInfo = [
-  { icon: Mail, label: "hello@portfolio.dev" },
-  { icon: MapPin, label: "San Francisco, CA" },
-  { icon: Phone, label: "+1 (555) 123-4567" },
+  { icon: Mail, label: "ariyanislamraj@gmail.com" },
+  { icon: MapPin, label: "Bangladesh" },
+  { icon: Phone, label: "+880 1XXX-XXXXXX" },
 ];
 
 const ContactSection = () => {
