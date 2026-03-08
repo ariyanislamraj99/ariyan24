@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
 import profileHero from "@/assets/profile-hero.png";
+import { lazy, Suspense } from "react";
+
+const HeroCube = lazy(() => import("@/components/HeroCube"));
 
 const HeroSection = () => {
   return (
@@ -11,15 +14,18 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6">
         <div className="glass rounded-2xl gradient-border overflow-hidden">
           <div className="grid md:grid-cols-5 gap-0">
-            {/* Image side */}
+            {/* Image side with 3D cube overlay */}
             <div className="md:col-span-2 relative">
-              <div className="aspect-[3/4] md:aspect-auto md:h-full">
+              <div className="aspect-[3/4] md:aspect-auto md:h-full relative">
                 <img
                   src={profileHero}
                   alt="Ariyan Islam Raj"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background/80 via-transparent to-transparent" />
+                <Suspense fallback={null}>
+                  <HeroCube />
+                </Suspense>
               </div>
             </div>
 
