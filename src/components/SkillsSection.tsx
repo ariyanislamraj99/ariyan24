@@ -182,16 +182,28 @@ const SkillsSection = () => {
                 <h3 className="text-lg font-semibold text-foreground">{cat.title}</h3>
               </div>
 
-              <div className="space-y-4">
-                {cat.skills.map((skill, si) => (
-                  <SkillBar
-                    key={skill.name}
-                    {...skill}
-                    accentVar={cat.accentVar}
-                    delay={0.3 + ci * 0.1 + si * 0.06}
-                  />
-                ))}
-              </div>
+              {cat.useCircles ? (
+                <div className="grid grid-cols-3 gap-4">
+                  {cat.skills.map((skill, si) => (
+                    <CircleSkill
+                      key={skill.name}
+                      {...skill}
+                      delay={0.3 + ci * 0.1 + si * 0.08}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {cat.skills.map((skill, si) => (
+                    <SkillBar
+                      key={skill.name}
+                      {...skill}
+                      accentVar={cat.accentVar}
+                      delay={0.3 + ci * 0.1 + si * 0.06}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
