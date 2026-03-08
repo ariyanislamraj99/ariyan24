@@ -31,7 +31,6 @@ const posts = [
     image: blog3,
     readTime: "10 min read",
   },
-];
   {
     title: "Web Performance Optimization: A Complete Guide",
     excerpt: "Learn how to achieve perfect Lighthouse scores by optimizing Core Web Vitals, lazy loading assets, and implementing efficient caching strategies.",
