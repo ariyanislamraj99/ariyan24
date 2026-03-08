@@ -216,17 +216,17 @@ const TestimonialsSection = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{
+                transition={isMobile ? { duration: 0.2 } : {
                   type: "spring",
                   stiffness: 200,
                   damping: 25,
                   mass: 0.8,
                 }}
                 className="w-full group"
-                style={{ transformStyle: "preserve-3d" }}
+                style={{ transformStyle: isMobile ? undefined : "preserve-3d" }}
               >
-                <Card3D className="relative">
-                  <div className="glass rounded-2xl p-8 md:p-10 gradient-border relative overflow-hidden">
+                {isMobile ? (
+                  <div className="glass rounded-2xl p-6 relative overflow-hidden">
                     {/* Ambient light effect */}
                     <div
                       className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-20 blur-3xl"
