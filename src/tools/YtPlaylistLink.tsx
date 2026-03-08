@@ -1,0 +1,3 @@
+import { useState } from "react"; import { ToolLayout, ToolInput, ToolOutput } from "./ToolComponents";
+const YtPlaylistLink = () => { const [ids,sI]=useState(""); const vids=ids.split("\n").map(u=>{const m=u.match(/(?:v=|youtu\.be\/|embed\/)([a-zA-Z0-9_-]{11})/); return m?m[1]:null;}).filter(Boolean); const link=vids.length?`https://www.youtube.com/watch_videos?video_ids=${vids.join(",")}`:""; return <ToolLayout><ToolInput label="YouTube URLs (one per line)" value={ids} onChange={sI} multiline rows={5} placeholder="https://youtube.com/watch?v=abc...\nhttps://youtube.com/watch?v=xyz..." /><ToolOutput label="Playlist Link" value={link} /></ToolLayout>; };
+export default YtPlaylistLink;

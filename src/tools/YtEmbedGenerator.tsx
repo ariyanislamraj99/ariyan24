@@ -1,0 +1,5 @@
+import { useState } from "react"; import { ToolLayout, ToolInput, ToolOutput, ToolNumber } from "./ToolComponents";
+const YtEmbedGenerator = () => { const [url,sU]=useState(""); const [w,sW]=useState(560); const [h,sH]=useState(315);
+  const m=url.match(/(?:v=|youtu\.be\/|embed\/)([a-zA-Z0-9_-]{11})/); const id=m?m[1]:""; const code=id?`<iframe width="${w}" height="${h}" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`:"";
+  return <ToolLayout><ToolInput label="YouTube URL" value={url} onChange={sU} placeholder="https://youtube.com/watch?v=..." /><div className="flex gap-4"><ToolNumber label="Width" value={w} onChange={sW} /><ToolNumber label="Height" value={h} onChange={sH} /></div><ToolOutput label="Embed Code" value={code} />{id&&<iframe width={Math.min(w,600)} height={Math.min(h,400)} src={`https://www.youtube.com/embed/${id}`} className="rounded border border-glass-border/20" allow="encrypted-media" />}</ToolLayout>; };
+export default YtEmbedGenerator;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon, Home, Briefcase, FolderOpen, Code, BookOpen, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Menu, X, Sun, Moon, Home, Briefcase, FolderOpen, Code, BookOpen, Mail, Wrench } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home", icon: Home },
@@ -8,13 +9,14 @@ const navLinks = [
   { label: "Projects", href: "#projects", icon: Code },
   { label: "Skills", href: "#skills", icon: Code },
   { label: "Blog", href: "#blog", icon: BookOpen },
+  { label: "Tools", href: "/tools", icon: Wrench, isRoute: true },
   { label: "Contact", href: "#contact", icon: Mail },
 ];
 
 const bottomNavLinks = [
   { label: "Home", href: "#home", icon: Home },
   { label: "Portfolio", href: "#portfolio", icon: FolderOpen },
-  { label: "Blog", href: "#blog", icon: BookOpen },
+  { label: "Tools", href: "/tools", icon: Wrench, isRoute: true },
   { label: "Contact", href: "#contact", icon: Mail },
 ];
 
@@ -77,19 +79,30 @@ const Navbar = () => {
             <ul className="flex items-center gap-6">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className={`flex items-center gap-1.5 text-xs transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
-                      activeSection === link.href
-                        ? "text-foreground after:w-full"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    <link.icon size={14} />
-                    {link.label}
-                  </a>
+                  {(link as any).isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="flex items-center gap-1.5 text-xs transition-colors duration-300 text-muted-foreground hover:text-foreground"
+                    >
+                      <link.icon size={14} />
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className={`flex items-center gap-1.5 text-xs transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
+                        activeSection === link.href
+                          ? "text-foreground after:w-full"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      <link.icon size={14} />
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
+
             </ul>
             <button
               onClick={toggleTheme}

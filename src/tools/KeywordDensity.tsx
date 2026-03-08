@@ -1,0 +1,3 @@
+import { useState } from "react"; import { ToolLayout, ToolInput, ToolOutput, ToolButton } from "./ToolComponents";
+const KeywordDensity = () => { const [t,sT]=useState(""); const [o,sO]=useState(""); const run=()=>{ const w=t.toLowerCase().replace(/[^\w\s]/g,"").split(/\s+/).filter(Boolean); const total=w.length; const freq:Record<string,number>={}; w.forEach(x=>freq[x]=(freq[x]||0)+1); const sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,20); sO(sorted.map(([k,v])=>`${k}: ${v} (${((v/total)*100).toFixed(1)}%)`).join("\n")); }; return <ToolLayout><ToolInput label="Text" value={t} onChange={sT} multiline rows={6} /><ToolButton onClick={run}>Analyze</ToolButton><ToolOutput label="Top Keywords" value={o} /></ToolLayout>; };
+export default KeywordDensity;

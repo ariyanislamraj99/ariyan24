@@ -1,0 +1,5 @@
+import { useState } from "react"; import { ToolLayout, ToolNumber, ToolOutput } from "./ToolComponents";
+const GridGen = () => { const [cols,sC]=useState(3);const [rows,sR]=useState(2);const [gap,sG]=useState(10);
+  const css=`display: grid;\ngrid-template-columns: repeat(${cols}, 1fr);\ngrid-template-rows: repeat(${rows}, 1fr);\ngap: ${gap}px;`;
+  return <ToolLayout><div className="grid grid-cols-3 gap-4"><ToolNumber label="Columns" value={cols} onChange={sC} min={1} max={12} /><ToolNumber label="Rows" value={rows} onChange={sR} min={1} max={12} /><ToolNumber label="Gap (px)" value={gap} onChange={sG} min={0} /></div><div className="border-2 border-dashed border-primary/30 rounded-xl p-2" style={{display:"grid",gridTemplateColumns:`repeat(${cols},1fr)`,gridTemplateRows:`repeat(${rows},1fr)`,gap:`${gap}px`}}>{Array.from({length:cols*rows},(_,i)=><div key={i} className="h-12 rounded bg-primary/30 flex items-center justify-center text-xs text-foreground">{i+1}</div>)}</div><ToolOutput label="CSS" value={css} /></ToolLayout>; };
+export default GridGen;

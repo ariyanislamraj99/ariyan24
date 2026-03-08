@@ -1,0 +1,4 @@
+import { ToolLayout } from "./ToolComponents";
+const pairs=[["Inter","Playfair Display"],["Roboto","Roboto Slab"],["Montserrat","Merriweather"],["Poppins","Lora"],["Raleway","Libre Baskerville"],["Open Sans","Oswald"],["Source Sans Pro","Source Serif Pro"],["Nunito","Crimson Text"]];
+const FontPairing = () => <ToolLayout><p className="text-sm text-muted-foreground mb-4">Popular font pairing suggestions:</p><div className="space-y-4">{pairs.map(([h,b],i)=><div key={i} className="glass rounded-xl p-4 gradient-border"><p className="text-lg font-bold text-foreground" style={{fontFamily:h}}>{h}</p><p className="text-sm text-muted-foreground" style={{fontFamily:b}}>Paired with {b} for body text. The quick brown fox jumps over the lazy dog.</p></div>)}</div></ToolLayout>;
+export default FontPairing;

@@ -1,0 +1,5 @@
+import { useState } from "react"; import { ToolLayout, ToolNumber, ToolOutput } from "./ToolComponents";
+const GlassmorphismGen = () => { const [blur,sB]=useState(10);const [opacity,sO]=useState(0.2);const [border,sBO]=useState(1);
+  const css=`background: rgba(255, 255, 255, ${opacity});\nbackdrop-filter: blur(${blur}px);\n-webkit-backdrop-filter: blur(${blur}px);\nborder: ${border}px solid rgba(255, 255, 255, 0.18);\nborder-radius: 10px;`;
+  return <ToolLayout><div className="flex justify-center py-8" style={{background:"linear-gradient(135deg,#667eea,#764ba2)"}}><div className="w-48 h-32 rounded-xl flex items-center justify-center text-sm text-white" style={{background:`rgba(255,255,255,${opacity})`,backdropFilter:`blur(${blur}px)`,border:`${border}px solid rgba(255,255,255,0.18)`}}>Glass Effect</div></div><ToolNumber label="Blur" value={blur} onChange={sB} min={0} max={50} /><ToolNumber label="Opacity" value={opacity} onChange={sO} min={0} max={1} step={0.05} /><ToolNumber label="Border" value={border} onChange={sBO} min={0} max={5} /><ToolOutput label="CSS" value={css} /></ToolLayout>; };
+export default GlassmorphismGen;

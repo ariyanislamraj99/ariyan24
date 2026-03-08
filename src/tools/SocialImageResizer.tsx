@@ -1,0 +1,4 @@
+import { ToolLayout } from "./ToolComponents";
+const sizes=[{name:"Facebook Cover",w:820,h:312},{name:"Facebook Post",w:1200,h:630},{name:"Twitter Header",w:1500,h:500},{name:"Twitter Post",w:1200,h:675},{name:"Instagram Post",w:1080,h:1080},{name:"Instagram Story",w:1080,h:1920},{name:"LinkedIn Cover",w:1584,h:396},{name:"YouTube Thumbnail",w:1280,h:720}];
+const SocialImageResizer = () => <ToolLayout><p className="text-sm text-muted-foreground mb-4">Reference sizes for social media images:</p><div className="grid sm:grid-cols-2 gap-3">{sizes.map(s=><div key={s.name} className="glass rounded-xl p-4 gradient-border"><p className="text-sm font-medium text-foreground">{s.name}</p><p className="text-xs text-muted-foreground">{s.w} × {s.h}px</p></div>)}</div><p className="text-xs text-muted-foreground mt-4">Use the Image Resizer tool to resize your images to these dimensions.</p></ToolLayout>;
+export default SocialImageResizer;
