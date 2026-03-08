@@ -248,12 +248,12 @@ html {
   100% { background-position: 0% 0%; }
 }
 
-@keyframes neon-border {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
 
-@keyframes neon-glow {
-  0%, 100% { opacity: 0.15; filter: blur(8px); }
-  50% { opacity: 0.3; filter: blur(12px); }
+@keyframes rotate-border {
+  to { --border-angle: 360deg; }
 }
