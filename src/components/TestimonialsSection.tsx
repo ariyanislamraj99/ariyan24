@@ -168,19 +168,22 @@ const TestimonialsSection = () => {
 
   return (
     <section id="testimonials" className="relative py-16 md:py-24 overflow-hidden">
-      <div className="glow-orb w-[350px] h-[350px] bg-secondary top-[10%] right-[-5%] animate-float animate-glow-pulse" />
-      <div className="glow-orb w-[250px] h-[250px] bg-primary bottom-[15%] left-[-3%] animate-float-delayed animate-glow-pulse" />
+      {!isMobile && (
+        <>
+          <div className="glow-orb w-[350px] h-[350px] bg-secondary top-[10%] right-[-5%] animate-float animate-glow-pulse" />
+          <div className="glow-orb w-[250px] h-[250px] bg-primary bottom-[15%] left-[-3%] animate-float-delayed animate-glow-pulse" />
 
-      {/* Floating particles */}
-      <FloatingParticle delay={0} x="15%" y="20%" />
-      <FloatingParticle delay={0.5} x="80%" y="30%" />
-      <FloatingParticle delay={1} x="25%" y="70%" />
-      <FloatingParticle delay={1.5} x="70%" y="65%" />
-      <FloatingParticle delay={2} x="50%" y="15%" />
-      <FloatingParticle delay={0.8} x="90%" y="50%" />
-      <FloatingParticle delay={1.2} x="10%" y="45%" />
-      <FloatingParticle delay={1.8} x="60%" y="80%" />
-
+          {/* Floating particles */}
+          <FloatingParticle delay={0} x="15%" y="20%" />
+          <FloatingParticle delay={0.5} x="80%" y="30%" />
+          <FloatingParticle delay={1} x="25%" y="70%" />
+          <FloatingParticle delay={1.5} x="70%" y="65%" />
+          <FloatingParticle delay={2} x="50%" y="15%" />
+          <FloatingParticle delay={0.8} x="90%" y="50%" />
+          <FloatingParticle delay={1.2} x="10%" y="45%" />
+          <FloatingParticle delay={1.8} x="60%" y="80%" />
+        </>
+      )}
       <div className="container mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
         <div className="text-center mb-10 md:mb-14">
           <motion.h2
