@@ -114,6 +114,7 @@ export default {
         "slide-up": "slide-up 0.8s ease-out forwards",
         "scale-in": "scale-in 0.5s ease-out forwards",
         "progress-fill": "progress-fill 1.5s ease-out forwards",
+        marquee: "marquee 30s linear infinite",
       },
     },
   },
