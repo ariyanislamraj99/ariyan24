@@ -73,7 +73,6 @@ const PortfolioSection = () => {
             >
               <div className="transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(8deg)_rotateX(4deg)_scale(1.03)] will-change-transform">
               <div className="glass rounded-2xl overflow-hidden gradient-border hover:shadow-glass-strong transition-shadow duration-500">
-            >
               <div className="relative overflow-hidden aspect-video">
                 <img
                   src={project.image}
