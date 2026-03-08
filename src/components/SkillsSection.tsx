@@ -63,6 +63,7 @@ const SkillBar = ({
   accentVar: string;
   delay: number;
   flag?: string;
+  icon?: React.ElementType;
 }) => (
   <div className="opacity-0 animate-fade-in" style={{ animationDelay: `${delay}s` }}>
     <div className="flex justify-between mb-1.5">
