@@ -116,6 +116,8 @@ const PortfolioSection = () => {
                 </div>
               </div>
             </div>
+            </div>
+            </div>
           ))}
         </div>
       </div>
