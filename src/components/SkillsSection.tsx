@@ -48,7 +48,7 @@ const categories: SkillCategory[] = [
   { title: "Technical Skills", icon: Cpu, skills: technicalSkills, accentVar: "--secondary" },
   { title: "Coding Skills", icon: Code, skills: codingSkills, accentVar: "--accent", useCircles: true },
   { title: "Language Skills", icon: Languages, skills: languageSkills, accentVar: "--primary" },
-  { title: "Platform & Tools", icon: Monitor, skills: platformSkills, accentVar: "--secondary" },
+  
 ];
 
 const SkillBar = ({
