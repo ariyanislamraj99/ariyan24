@@ -1,6 +1,7 @@
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const PARTICLE_COUNT = 120;
 
@@ -83,6 +84,13 @@ const Particles = () => {
 };
 
 const ParticleBackground = () => {
+  const isMobile = useIsMobile();
+
+  // Don't render particles on mobile for better performance
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <div className="fixed inset-0 z-0 pointer-events-none lg:left-[320px]">
       <Canvas
