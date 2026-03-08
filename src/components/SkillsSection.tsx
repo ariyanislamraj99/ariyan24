@@ -11,12 +11,12 @@ const professionalSkills = [
 ];
 
 const technicalSkills = [
-  { name: "React / Next.js", level: 95 },
-  { name: "Node.js / Express", level: 90 },
-  { name: "TypeScript", level: 92 },
-  { name: "REST API / GraphQL", level: 88 },
-  { name: "Database Design", level: 85 },
-  { name: "Cloud / DevOps", level: 80 },
+  { name: "React / Next.js", level: 95, icon: Braces },
+  { name: "Node.js / Express", level: 90, icon: Terminal },
+  { name: "TypeScript", level: 92, icon: FileType },
+  { name: "REST API / GraphQL", level: 88, icon: Globe },
+  { name: "Database Design", level: 85, icon: Database },
+  { name: "Cloud / DevOps", level: 80, icon: Cpu },
 ];
 
 const codingSkills = [
