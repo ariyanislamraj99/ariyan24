@@ -59,6 +59,7 @@ const SkillBar = ({
   icon: Icon,
   delay,
   flag,
+  inView,
 }: {
   name: string;
   level: number;
@@ -66,8 +67,9 @@ const SkillBar = ({
   delay: number;
   flag?: string;
   icon?: React.ElementType;
+  inView: boolean;
 }) => (
-  <div className="opacity-0 animate-fade-in" style={{ animationDelay: `${delay}s` }}>
+  <div className={`transition-all duration-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: `${delay}s` }}>
     <div className="flex justify-between mb-1.5">
       <span className="text-sm font-medium text-foreground flex items-center gap-2">
         {Icon && <Icon size={14} className="text-muted-foreground" />}
@@ -78,11 +80,11 @@ const SkillBar = ({
     </div>
     <div className="h-2 rounded-full bg-muted overflow-hidden">
       <div
-        className="h-full rounded-full animate-progress-fill"
+        className="h-full rounded-full transition-all duration-[1.5s] ease-out"
         style={
           {
-            "--progress-width": `${level}%`,
-            animationDelay: `${delay + 0.2}s`,
+            width: inView ? `${level}%` : "0%",
+            transitionDelay: `${delay + 0.2}s`,
             background: `linear-gradient(90deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)))`,
           } as React.CSSProperties
         }
