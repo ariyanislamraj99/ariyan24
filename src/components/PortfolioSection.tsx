@@ -68,9 +68,11 @@ const PortfolioSection = () => {
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className="glass rounded-2xl overflow-hidden gradient-border group hover:shadow-glass-strong transition-all duration-500 hover:-translate-y-2 opacity-0 animate-slide-up"
+              className="group [perspective:1000px] opacity-0 animate-slide-up"
               style={{ animationDelay: `${0.15 + i * 0.1}s` }}
             >
+              <div className="transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(8deg)_rotateX(4deg)_scale(1.03)] will-change-transform">
+              <div className="glass rounded-2xl overflow-hidden gradient-border hover:shadow-glass-strong transition-shadow duration-500">
               <div className="relative overflow-hidden aspect-video">
                 <img
                   src={project.image}
@@ -112,6 +114,8 @@ const PortfolioSection = () => {
                   ))}
                 </div>
               </div>
+            </div>
+            </div>
             </div>
           ))}
         </div>
