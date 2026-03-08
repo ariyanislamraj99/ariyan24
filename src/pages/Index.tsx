@@ -20,6 +20,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <ScrollIndicator />
+      <Suspense fallback={null}>
+        <ParticleBackground />
+      </Suspense>
 
       {/* Sidebar - hidden on mobile, fixed on desktop */}
       <ProfileSidebar />
