@@ -29,9 +29,9 @@ const codingSkills = [
 ];
 
 const languageSkills = [
-  { name: "Bangla", level: 100 },
-  { name: "English", level: 85 },
-  { name: "Hindi", level: 60 },
+  { name: "Bangla", level: 100, flag: "🇧🇩" },
+  { name: "English", level: 85, flag: "🇬🇧" },
+  { name: "Hindi", level: 60, flag: "🇮🇳" },
 ];
 
 
