@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ProfileSidebar from "@/components/ProfileSidebar";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -14,19 +15,27 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden pb-16 md:pb-0">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <ScrollIndicator />
-      <Navbar />
-      <HeroSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <ExperienceSection />
-      <SkillsSection />
-      <PortfolioSection />
-      <BlogSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <Footer />
+
+      {/* Sidebar - hidden on mobile, fixed on desktop */}
+      <ProfileSidebar />
+
+      {/* Main content area */}
+      <div className="lg:ml-[320px] pb-16 md:pb-0">
+        <Navbar />
+        <HeroSection />
+        <ServicesSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <SkillsSection />
+        <PortfolioSection />
+        <BlogSection />
+        <TestimonialsSection />
+        <ContactSection />
+        <Footer />
+      </div>
+
       <ScrollToTop />
     </div>
   );

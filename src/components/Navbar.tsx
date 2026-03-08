@@ -32,8 +32,6 @@ const Navbar = () => {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 50);
-
-      // Detect active section
       const sections = navLinks.map((l) => l.href.slice(1));
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
@@ -61,25 +59,27 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Navbar */}
+      {/* Top Navbar - only shows on the main content area */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "glass-strong py-3" : "py-5"
+        className={`fixed top-0 right-0 left-0 lg:left-[320px] z-50 transition-all duration-500 ${
+          scrolled ? "glass-strong py-2" : "py-4"
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between px-4 sm:px-6">
-          <a href="#home" className="text-xl font-display font-bold gradient-text">
+        <div className="flex items-center justify-between px-4 sm:px-6">
+          {/* Mobile: show name */}
+          <a href="#home" className="lg:hidden text-lg font-display font-bold gradient-text">
             Ariyan
           </a>
+          {/* Desktop: show nav links */}
+          <div className="hidden lg:block" />
 
-          {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
+            <ul className="flex items-center gap-6">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className={`text-sm transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
+                    className={`text-xs transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
                       activeSection === link.href
                         ? "text-foreground after:w-full"
                         : "text-muted-foreground hover:text-foreground"
@@ -92,48 +92,48 @@ const Navbar = () => {
             </ul>
             <button
               onClick={toggleTheme}
-              className="w-9 h-9 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+              className="w-8 h-8 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+              {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
             </button>
           </div>
 
           {/* Mobile top controls */}
-          <div className="flex md:hidden items-center gap-3">
+          <div className="flex md:hidden items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="w-9 h-9 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+              className="w-8 h-8 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+              {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
             </button>
             <button
               className="text-foreground"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile dropdown menu */}
+        {/* Mobile dropdown */}
         {mobileOpen && (
-          <div className="md:hidden glass-strong mt-2 mx-4 rounded-lg p-6 animate-fade-in">
-            <ul className="flex flex-col gap-4">
+          <div className="md:hidden glass-strong mt-2 mx-4 rounded-lg p-4 animate-fade-in">
+            <ul className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className={`flex items-center gap-3 transition-colors ${
+                    className={`flex items-center gap-3 text-sm transition-colors ${
                       activeSection === link.href
                         ? "text-primary font-medium"
                         : "text-foreground hover:text-primary"
                     }`}
                     onClick={() => setMobileOpen(false)}
                   >
-                    <link.icon size={16} />
+                    <link.icon size={14} />
                     {link.label}
                   </a>
                 </li>
@@ -153,9 +153,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 className={`flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg transition-all duration-300 ${
-                  isActive
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                  isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 <div
