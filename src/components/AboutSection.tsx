@@ -30,7 +30,7 @@ const AboutSection = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            I'm a passionate full-stack developer with a love for creating beautiful, functional digital products that make a difference.
+            I'm Ariyan Islam Raj — a passionate full-stack developer who loves turning ideas into polished, high-performance web applications that users enjoy.
           </p>
         </div>
 

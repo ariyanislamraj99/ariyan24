@@ -15,11 +15,11 @@ const HeroSection = () => {
             Hello, I'm
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <span className="gradient-text">Creative</span>{" "}
-            <span className="text-foreground">Developer</span>
+            <span className="gradient-text">Ariyan Islam</span>{" "}
+            <span className="text-foreground">Raj</span>
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-10 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-            I craft immersive digital experiences with clean code, bold design, and pixel-perfect attention to detail.
+            Full-Stack Developer passionate about building scalable web applications with modern technologies, clean architecture, and exceptional user experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in" style={{ animationDelay: "0.8s" }}>
             <Button variant="gradient" size="lg" asChild>
