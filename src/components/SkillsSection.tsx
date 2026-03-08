@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Code, Terminal, Globe, Cpu, Languages, FileCode, FileType, Braces, Database, Hash, Lightbulb, Users, ClipboardList, MessageSquare, IterationCcw, Crown } from "lucide-react";
 
@@ -58,6 +59,7 @@ const SkillBar = ({
   icon: Icon,
   delay,
   flag,
+  inView,
 }: {
   name: string;
   level: number;
@@ -65,8 +67,9 @@ const SkillBar = ({
   delay: number;
   flag?: string;
   icon?: React.ElementType;
+  inView: boolean;
 }) => (
-  <div className="opacity-0 animate-fade-in" style={{ animationDelay: `${delay}s` }}>
+  <div className={`transition-all duration-500 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: `${delay}s` }}>
     <div className="flex justify-between mb-1.5">
       <span className="text-sm font-medium text-foreground flex items-center gap-2">
         {Icon && <Icon size={14} className="text-muted-foreground" />}
@@ -77,11 +80,11 @@ const SkillBar = ({
     </div>
     <div className="h-2 rounded-full bg-muted overflow-hidden">
       <div
-        className="h-full rounded-full animate-progress-fill"
+        className="h-full rounded-full transition-all duration-[1.5s] ease-out"
         style={
           {
-            "--progress-width": `${level}%`,
-            animationDelay: `${delay + 0.2}s`,
+            width: inView ? `${level}%` : "0%",
+            transitionDelay: `${delay + 0.2}s`,
             background: `linear-gradient(90deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)))`,
           } as React.CSSProperties
         }
@@ -95,20 +98,22 @@ const CircleSkill = ({
   level,
   delay,
   icon: Icon,
+  inView,
 }: {
   name: string;
   level: number;
   delay: number;
   icon?: React.ElementType;
+  inView: boolean;
 }) => {
   const circumference = 2 * Math.PI * 40;
-  const offset = circumference - (level / 100) * circumference;
+  const offset = inView ? circumference - (level / 100) * circumference : circumference;
   const gradientId = `grad-${name.replace(/[^a-zA-Z]/g, "")}`;
 
   return (
     <div
-      className="flex flex-col items-center gap-2 opacity-0 animate-scale-in"
-      style={{ animationDelay: `${delay}s` }}
+      className={`flex flex-col items-center gap-2 transition-all duration-500 ${inView ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}
+      style={{ transitionDelay: `${delay}s` }}
     >
       <div className="relative w-20 h-20">
         <svg className="w-full h-full -rotate-90" viewBox="0 0 90 90">
@@ -131,7 +136,7 @@ const CircleSkill = ({
             strokeDasharray={circumference}
             strokeDashoffset={offset}
             className="transition-all duration-[1.5s] ease-out"
-            style={{ filter: "drop-shadow(0 0 4px hsl(var(--accent) / 0.4))" }}
+            style={{ filter: "drop-shadow(0 0 4px hsl(var(--accent) / 0.4))", transitionDelay: `${delay}s` }}
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -146,9 +151,20 @@ const CircleSkill = ({
 
 const SkillsSection = () => {
   const ref = useScrollReveal();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="skills" className="relative py-16 md:py-24">
+    <section id="skills" className="relative py-16 md:py-24" ref={sectionRef}>
       <div className="glow-orb w-[500px] h-[500px] bg-secondary bottom-[10%] right-[-10%] animate-float-delayed animate-glow-pulse" />
       <div className="glow-orb w-[300px] h-[300px] bg-accent top-[20%] left-[-5%] animate-float animate-glow-pulse" />
 
@@ -192,6 +208,7 @@ const SkillsSection = () => {
                       key={skill.name}
                       {...skill}
                       delay={0.3 + ci * 0.1 + si * 0.08}
+                      inView={inView}
                     />
                   ))}
                 </div>
@@ -203,6 +220,7 @@ const SkillsSection = () => {
                       {...skill}
                       accentVar={cat.accentVar}
                       delay={0.3 + ci * 0.1 + si * 0.06}
+                      inView={inView}
                     />
                   ))}
                 </div>
