@@ -128,14 +128,18 @@ html {
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 9999px;
-    background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
+    background: linear-gradient(180deg, hsl(260 80% 65%), hsl(230 80% 55%), hsl(260 80% 65%));
+    background-size: 100% 200%;
+    animation: scrollbar-gradient 3s ease infinite;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, hsl(var(--primary) / 0.9), hsl(var(--secondary) / 0.9), hsl(var(--accent) / 0.9));
+    background: linear-gradient(180deg, hsl(260 90% 70%), hsl(220 90% 60%), hsl(260 90% 70%));
+    background-size: 100% 200%;
+    animation: scrollbar-gradient 2s ease infinite;
   }
 
   html {
-    scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+    scrollbar-color: hsl(260 80% 65%) hsl(var(--background));
     scrollbar-width: thin;
   }
 }
