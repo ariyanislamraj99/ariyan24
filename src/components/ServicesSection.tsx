@@ -55,7 +55,7 @@ const ServicesSection = () => {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className="glass rounded-2xl p-8 gradient-border group hover:shadow-glass-strong transition-all duration-500 hover:-translate-y-2 opacity-0 animate-slide-up"
+              className="glass rounded-2xl p-6 sm:p-8 gradient-border group hover:shadow-glass-strong transition-all duration-500 hover:-translate-y-2 opacity-0 animate-slide-up"
               style={{ animationDelay: `${0.2 + i * 0.1}s` }}
             >
               <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-6 group-hover:shadow-glass-glow transition-shadow duration-500">

@@ -55,7 +55,7 @@ const ProjectsSection = () => {
               {/* Color bar */}
               <div className={`h-1 w-full bg-gradient-to-r ${project.gradient}`} />
 
-              <div className="p-8">
+              <div className="p-6 sm:p-8">
                 <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:gradient-text transition-all duration-300">
                   {project.title}
                 </h3>

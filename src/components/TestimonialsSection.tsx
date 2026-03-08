@@ -177,8 +177,8 @@ const TestimonialsSection = () => {
       <FloatingParticle delay={1.2} x="10%" y="45%" />
       <FloatingParticle delay={1.8} x="60%" y="80%" />
 
-      <div className="container mx-auto px-6 relative z-10" ref={ref}>
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
+        <div className="text-center mb-10 md:mb-14">
           <motion.h2
             className="text-3xl md:text-5xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}

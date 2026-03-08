@@ -77,7 +77,7 @@ const ContactSection = () => {
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="md:col-span-3 glass rounded-2xl p-8 gradient-border opacity-0 animate-slide-up"
+            className="md:col-span-3 glass rounded-2xl p-6 sm:p-8 gradient-border opacity-0 animate-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
             <div className="space-y-5">
