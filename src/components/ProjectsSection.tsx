@@ -32,11 +32,11 @@ const ProjectsSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <section id="projects" className="relative py-24 md:py-32">
+    <section id="projects" className="relative py-16 md:py-24">
       <div className="glow-orb w-[400px] h-[400px] bg-accent top-[20%] left-[-5%] animate-float animate-glow-pulse" />
 
-      <div className="container mx-auto px-6 relative z-10" ref={ref}>
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
+        <div className="text-center mb-10 md:mb-14">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
