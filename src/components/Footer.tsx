@@ -4,7 +4,7 @@ const Footer = () => (
   <footer className="glass-subtle py-8 mt-12">
     <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <p className="text-sm text-muted-foreground">
-        © 2026 Ariyan Islam Raj. Built with passion.
+        © 2026 Ariyan Islam Raj.
       </p>
       <div className="flex gap-5">
         {[Github, Linkedin, Twitter].map((Icon, i) => (
