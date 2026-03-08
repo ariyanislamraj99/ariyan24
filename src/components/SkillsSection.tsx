@@ -34,14 +34,6 @@ const languageSkills = [
   { name: "Hindi", level: 60 },
 ];
 
-const platformSkills = [
-  { name: "VS Code", level: 95 },
-  { name: "GitHub / Git", level: 92 },
-  { name: "Docker", level: 80 },
-  { name: "Figma", level: 78 },
-  { name: "Linux / Terminal", level: 85 },
-  { name: "AWS / Vercel", level: 80 },
-];
 
 interface SkillCategory {
   title: string;
