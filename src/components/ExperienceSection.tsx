@@ -40,6 +40,13 @@ const education = [
     description:
       "Science group with emphasis on mathematics and physics.",
   },
+  {
+    degree: "Secondary School Certificate (SSC)",
+    institution: "Ideal School & College",
+    period: "2014 – 2016",
+    description:
+      "Completed secondary education with a strong foundation in science and mathematics.",
+  },
 ];
 
 const ExperienceSection = () => {
