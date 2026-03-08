@@ -30,22 +30,5 @@ const Index = () => {
       <ScrollToTop />
     </div>
   );
-};
-  return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
-      <ScrollIndicator />
-      <Navbar />
-      <HeroSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <Footer />
-      <ScrollToTop />
-    </div>
-  );
-};
 
 export default Index;
