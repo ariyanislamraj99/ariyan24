@@ -1,13 +1,13 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Code, Terminal, Globe, Cpu, Languages, FileCode, FileType, Braces, Database, Hash } from "lucide-react";
+import { Code, Terminal, Globe, Cpu, Languages, FileCode, FileType, Braces, Database, Hash, Lightbulb, Users, ClipboardList, MessageSquare, IterationCcw, Crown } from "lucide-react";
 
 const professionalSkills = [
-  { name: "Problem Solving", level: 95 },
-  { name: "Team Collaboration", level: 90 },
-  { name: "Project Management", level: 85 },
-  { name: "Communication", level: 90 },
-  { name: "Agile / Scrum", level: 85 },
-  { name: "Leadership", level: 80 },
+  { name: "Problem Solving", level: 95, icon: Lightbulb },
+  { name: "Team Collaboration", level: 90, icon: Users },
+  { name: "Project Management", level: 85, icon: ClipboardList },
+  { name: "Communication", level: 90, icon: MessageSquare },
+  { name: "Agile / Scrum", level: 85, icon: IterationCcw },
+  { name: "Leadership", level: 80, icon: Crown },
 ];
 
 const technicalSkills = [
