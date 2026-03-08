@@ -32,6 +32,15 @@ const posts = [
     readTime: "10 min read",
   },
 ];
+  {
+    title: "Web Performance Optimization: A Complete Guide",
+    excerpt: "Learn how to achieve perfect Lighthouse scores by optimizing Core Web Vitals, lazy loading assets, and implementing efficient caching strategies.",
+    date: "Jan 12, 2026",
+    category: "Performance",
+    image: blog4,
+    readTime: "7 min read",
+  },
+];
 
 const BlogSection = () => {
   const ref = useScrollReveal();
