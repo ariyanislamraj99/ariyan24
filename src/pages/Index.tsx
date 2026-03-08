@@ -34,8 +34,8 @@ const Index = () => {
 
   useEffect(() => {
     if (!loading) {
-      toast("👨‍💻 Welcome to my portfolio!", {
-        description: "Built with React, TypeScript & Tailwind CSS",
+      toast("👨‍💻 Ariyan Islam Raj", {
+        description: "Welcome to my portfolio!",
         duration: 5000,
       });
     }
