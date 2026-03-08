@@ -1,4 +1,23 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
+
+const useCountUp = (target: number, inView: boolean, duration = 1500, delay = 0) => {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    const timeout = setTimeout(() => {
+      const start = performance.now();
+      const step = (now: number) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setCount(Math.round(eased * target));
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }, delay * 1000);
+    return () => clearTimeout(timeout);
+  }, [inView, target, duration, delay]);
+  return count;
+};
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Code, Terminal, Globe, Cpu, Languages, FileCode, FileType, Braces, Database, Hash, Lightbulb, Users, ClipboardList, MessageSquare, IterationCcw, Crown } from "lucide-react";
 
