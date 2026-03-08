@@ -118,7 +118,26 @@ html {
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
-}
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--primary) / 0.9), hsl(var(--secondary) / 0.9), hsl(var(--accent) / 0.9));
+  }
+
+  html {
+    scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+    scrollbar-width: thin;
+  }
 
 @layer components {
   .glass {
