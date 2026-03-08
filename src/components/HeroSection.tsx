@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
-import profileAvatar from "@/assets/profile-avatar.jpg";
+import profileHero from "@/assets/profile-hero.png";
 
 const HeroSection = () => {
   return (
@@ -15,7 +15,7 @@ const HeroSection = () => {
             <div className="md:col-span-2 relative">
               <div className="aspect-[3/4] md:aspect-auto md:h-full">
                 <img
-                  src={profileAvatar}
+                  src={profileHero}
                   alt="Ariyan Islam Raj"
                   className="w-full h-full object-cover"
                 />
