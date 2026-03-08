@@ -81,7 +81,7 @@ const SkillBar = ({
           {
             "--progress-width": `${level}%`,
             animationDelay: `${delay + 0.2}s`,
-            background: `linear-gradient(90deg, hsl(var(${accentVar})), hsl(var(${accentVar}) / 0.6))`,
+            background: `linear-gradient(90deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)))`,
           } as React.CSSProperties
         }
       />
