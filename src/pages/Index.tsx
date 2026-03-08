@@ -8,10 +8,12 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <ScrollIndicator />
       <Navbar />
       <HeroSection />
       <AboutSection />
