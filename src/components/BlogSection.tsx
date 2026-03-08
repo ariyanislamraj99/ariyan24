@@ -65,7 +65,7 @@ const BlogSection = () => {
               className="[perspective:1200px] opacity-0 animate-slide-up"
               style={{ animationDelay: `${0.15 + i * 0.12}s` }}
             >
-              <div className="relative w-full h-[420px] [transform-style:preserve-3d] transition-transform duration-700 group hover:[transform:rotateY(180deg)]">
+              <div className="relative w-full h-[380px] sm:h-[420px] [transform-style:preserve-3d] transition-transform duration-700 group hover:[transform:rotateY(180deg)]">
                 {/* Front */}
                 <article className="absolute inset-0 [backface-visibility:hidden] glass rounded-2xl overflow-hidden gradient-border">
                   <div className="relative overflow-hidden aspect-[16/10]">

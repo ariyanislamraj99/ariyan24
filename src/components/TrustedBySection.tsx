@@ -40,7 +40,7 @@ const TrustedBySection = () => {
               <img
                 src={client.logo}
                 alt={client.name}
-                className="w-8 h-8 object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300 dark:invert"
+                className="w-8 h-8 object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
                 loading="lazy"
               />
               <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">

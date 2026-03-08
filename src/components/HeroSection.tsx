@@ -4,7 +4,7 @@ import profileHero from "@/assets/profile-hero.png";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative py-16 md:py-24 overflow-hidden">
+    <section id="home" className="relative pt-20 pb-16 md:pt-24 md:pb-24 overflow-hidden">
       <div className="glow-orb w-[500px] h-[500px] bg-primary top-[-10%] left-[-10%] animate-float animate-glow-pulse" />
       <div className="glow-orb w-[400px] h-[400px] bg-secondary bottom-[-10%] right-[-5%] animate-float-delayed animate-glow-pulse" />
 
