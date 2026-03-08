@@ -1,5 +1,8 @@
 import { Code, Palette, Zap } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { lazy, Suspense } from "react";
+
+const AboutCube = lazy(() => import("@/components/AboutCube"));
 
 const cards = [
   {
@@ -32,6 +35,13 @@ const AboutSection = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             I'm Ariyan Islam Raj — a passionate full-stack developer who loves turning ideas into polished, high-performance web applications that users enjoy.
           </p>
+        </div>
+
+        {/* 3D Cube */}
+        <div className="max-w-xs mx-auto mb-10 md:mb-14 opacity-0 animate-scale-in" style={{ animationDelay: "0.1s" }}>
+          <Suspense fallback={<div className="w-full h-[280px] md:h-[320px] flex items-center justify-center"><div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" /></div>}>
+            <AboutCube />
+          </Suspense>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
