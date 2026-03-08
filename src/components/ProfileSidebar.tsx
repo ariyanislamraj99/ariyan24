@@ -34,8 +34,8 @@ END:VCARD`;
   };
 
   return (
-    <aside className="w-full lg:w-[320px] lg:min-h-screen lg:fixed lg:left-0 lg:top-0 lg:bottom-0 z-40 glass-strong lg:border-r lg:border-glass-border/10 overflow-y-auto">
-      <div className="flex flex-col items-center p-6 lg:p-8 lg:py-12">
+    <aside className="hidden lg:flex lg:w-[320px] lg:min-h-screen lg:fixed lg:left-0 lg:top-0 lg:bottom-0 z-40 glass-strong lg:border-r lg:border-glass-border/10 overflow-y-auto scrollbar-thin">
+      <div className="flex flex-col items-center p-8 py-10 w-full">
         {/* Avatar */}
         <div className="relative mb-5">
           <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden gradient-border p-[3px]">
