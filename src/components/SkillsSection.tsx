@@ -98,20 +98,22 @@ const CircleSkill = ({
   level,
   delay,
   icon: Icon,
+  inView,
 }: {
   name: string;
   level: number;
   delay: number;
   icon?: React.ElementType;
+  inView: boolean;
 }) => {
   const circumference = 2 * Math.PI * 40;
-  const offset = circumference - (level / 100) * circumference;
+  const offset = inView ? circumference - (level / 100) * circumference : circumference;
   const gradientId = `grad-${name.replace(/[^a-zA-Z]/g, "")}`;
 
   return (
     <div
-      className="flex flex-col items-center gap-2 opacity-0 animate-scale-in"
-      style={{ animationDelay: `${delay}s` }}
+      className={`flex flex-col items-center gap-2 transition-all duration-500 ${inView ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}
+      style={{ transitionDelay: `${delay}s` }}
     >
       <div className="relative w-20 h-20">
         <svg className="w-full h-full -rotate-90" viewBox="0 0 90 90">
@@ -134,7 +136,7 @@ const CircleSkill = ({
             strokeDasharray={circumference}
             strokeDashoffset={offset}
             className="transition-all duration-[1.5s] ease-out"
-            style={{ filter: "drop-shadow(0 0 4px hsl(var(--accent) / 0.4))" }}
+            style={{ filter: "drop-shadow(0 0 4px hsl(var(--accent) / 0.4))", transitionDelay: `${delay}s` }}
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
