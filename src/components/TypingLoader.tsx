@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 const phrases = [
-  "$ sudo load --portfolio raj.dev",
-  ">> Spawning full-stack modules...",
-  ">> Compiling React + Node + DB layers...",
-  ">> Injecting pixels & logic...",
-  ">> Access granted. Welcome, visitor.",
+  "$ ssh raj@fullstack.dev --connect",
+  ">> Loading Ariyan Islam Raj's workspace...",
+  ">> Mounting React • Node • MongoDB stacks...",
+  ">> Deploying 50+ projects to runtime...",
+  ">> root@raj:~# Portfolio ready. Welcome.",
 ];
 
 const TypingLoader = ({ onComplete }: { onComplete: () => void }) => {
