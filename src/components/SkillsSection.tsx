@@ -90,6 +90,57 @@ const SkillBar = ({
   </div>
 );
 
+const CircleSkill = ({
+  name,
+  level,
+  delay,
+}: {
+  name: string;
+  level: number;
+  delay: number;
+}) => {
+  const circumference = 2 * Math.PI * 40;
+  const offset = circumference - (level / 100) * circumference;
+  const gradientId = `grad-${name.replace(/[^a-zA-Z]/g, "")}`;
+
+  return (
+    <div
+      className="flex flex-col items-center gap-2 opacity-0 animate-scale-in"
+      style={{ animationDelay: `${delay}s` }}
+    >
+      <div className="relative w-20 h-20">
+        <svg className="w-full h-full -rotate-90" viewBox="0 0 90 90">
+          <defs>
+            <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(var(--gradient-start))" />
+              <stop offset="50%" stopColor="hsl(var(--gradient-mid))" />
+              <stop offset="100%" stopColor="hsl(var(--gradient-end))" />
+            </linearGradient>
+          </defs>
+          <circle cx="45" cy="45" r="40" fill="none" stroke="hsl(var(--muted))" strokeWidth="5" />
+          <circle
+            cx="45"
+            cy="45"
+            r="40"
+            fill="none"
+            stroke={`url(#${gradientId})`}
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            strokeDashoffset={offset}
+            className="transition-all duration-[1.5s] ease-out"
+            style={{ filter: "drop-shadow(0 0 4px hsl(var(--accent) / 0.4))" }}
+          />
+        </svg>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-sm font-bold text-foreground">{level}%</span>
+        </div>
+      </div>
+      <span className="text-xs text-muted-foreground text-center leading-tight">{name}</span>
+    </div>
+  );
+};
+
 const SkillsSection = () => {
   const ref = useScrollReveal();
 
