@@ -56,15 +56,20 @@ const SkillBar = ({
   level,
   accentVar,
   delay,
+  flag,
 }: {
   name: string;
   level: number;
   accentVar: string;
   delay: number;
+  flag?: string;
 }) => (
   <div className="opacity-0 animate-fade-in" style={{ animationDelay: `${delay}s` }}>
     <div className="flex justify-between mb-1.5">
-      <span className="text-sm font-medium text-foreground">{name}</span>
+      <span className="text-sm font-medium text-foreground flex items-center gap-2">
+        {flag && <span className="text-base">{flag}</span>}
+        {name}
+      </span>
       <span className="text-xs text-muted-foreground">{level}%</span>
     </div>
     <div className="h-2 rounded-full bg-muted overflow-hidden">
