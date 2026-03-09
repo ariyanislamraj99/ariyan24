@@ -164,12 +164,12 @@ export const tools: Tool[] = [
   // ═══════════════════════════════════════
   // SOCIAL MEDIA TOOLS
   // ═══════════════════════════════════════
-  { id: "twitter-card-gen", name: "Twitter Card Generator", description: "Generate Twitter Card meta tags", category: "social", icon: Tag, implemented: true },
+  { id: "twitter-card-gen", name: "Twitter Card Generator", description: "Generate Twitter Card meta tags", category: "seo", icon: Tag, implemented: true },
   { id: "social-image-resizer", name: "Social Image Resizer", description: "Resize for Facebook, Twitter, IG, LinkedIn", category: "social", icon: Image, implemented: true },
   { id: "hashtag-generator", name: "Hashtag Generator", description: "Generate hashtags from keywords", category: "social", icon: Hash, implemented: true },
   { id: "emoji-picker", name: "Emoji Picker & Copy", description: "Browse and copy emojis", category: "social", icon: Star, implemented: true },
   { id: "bio-generator", name: "Social Media Bio Generator", description: "Create professional social bios", category: "social", icon: PenTool, implemented: true },
-  { id: "link-shortener-gen", name: "UTM Link Builder", description: "Build UTM tracking links", category: "social", icon: Link, implemented: true },
+  { id: "link-shortener-gen", name: "UTM Link Builder", description: "Build UTM tracking links", category: "seo", icon: Link, implemented: true },
   
   // ═══════════════════════════════════════
   // DESIGN TOOLS
