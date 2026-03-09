@@ -155,6 +155,15 @@ const toolComponents: Record<string, React.LazyExoticComponent<any>> = {
   "yt-playlist-optimizer": lazy(() => import("@/tools/YtPlaylistOptimizer")),
   "yt-comment-templates": lazy(() => import("@/tools/YtCommentTemplates")),
   "yt-analytics-calc": lazy(() => import("@/tools/YtAnalyticsCalc")),
+  "yt-title-optimizer": lazy(() => import("@/tools/YtTitleOptimizer")),
+  "yt-description-builder": lazy(() => import("@/tools/YtDescriptionBuilder")),
+  "yt-seo-scorer": lazy(() => import("@/tools/YtSeoScorer")),
+  // PDF Editor
+  "pdf-editor": lazy(() => import("@/tools/PdfEditor")),
+  // SEO Advanced
+  "seo-content-analyzer": lazy(() => import("@/tools/SeoContentAnalyzer")),
+  "seo-onpage-checker": lazy(() => import("@/tools/SeoOnPageChecker")),
+  "seo-keyword-planner": lazy(() => import("@/tools/SeoKeywordPlanner")),
 };
 
 const ToolPage = () => {
