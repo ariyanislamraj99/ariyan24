@@ -131,6 +131,17 @@ const toolComponents: Record<string, React.LazyExoticComponent<any>> = {
   "wp-password-gen": lazy(() => import("@/tools/WpPasswordGen")),
   "wp-salt-gen": lazy(() => import("@/tools/WpSaltGen")),
   "wp-shortcode-gen": lazy(() => import("@/tools/WpShortcodeGen")),
+  // PDF
+  "pdf-page-counter": lazy(() => import("@/tools/PdfPageCounter")),
+  "pdf-metadata-viewer": lazy(() => import("@/tools/PdfMetadataViewer")),
+  "pdf-text-extractor": lazy(() => import("@/tools/PdfTextExtractor")),
+  "pdf-word-counter": lazy(() => import("@/tools/PdfWordCounter")),
+  "pdf-link-extractor": lazy(() => import("@/tools/PdfLinkExtractor")),
+  "pdf-size-analyzer": lazy(() => import("@/tools/PdfSizeAnalyzer")),
+  "pdf-password-gen": lazy(() => import("@/tools/PdfPasswordGen")),
+  "pdf-watermark-gen": lazy(() => import("@/tools/PdfWatermarkGen")),
+  "pdf-invoice-gen": lazy(() => import("@/tools/PdfInvoiceGen")),
+  "pdf-resume-checker": lazy(() => import("@/tools/PdfResumeChecker")),
 };
 
 const ToolPage = () => {
