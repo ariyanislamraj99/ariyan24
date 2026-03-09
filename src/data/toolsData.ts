@@ -35,6 +35,7 @@ export const categories: { id: ToolCategory; label: string; icon: any }[] = [
   { id: "social", label: "Social Media", icon: Heart },
   { id: "design", label: "Design Tools", icon: Palette },
   { id: "wordpress", label: "WordPress", icon: Layers },
+  { id: "pdf", label: "PDF Tools", icon: FileText },
 ];
 
 export const tools: Tool[] = [
