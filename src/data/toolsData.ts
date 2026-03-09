@@ -1,5 +1,5 @@
 import {
-  Globe, Image, Search, Youtube, Palette, Type, Code, FileText, Lock, Hash,
+  Globe, Image, Search, Youtube, Palette, Type, Code, FileText, Lock, Hash, FileEdit,
   Link, Mail, QrCode, Timer, Calculator, Ruler, RefreshCw, Binary, Shield,
   FileCode, Smartphone, Zap, Eye, Layers, Download, Upload, Scissors,
   RotateCw, Maximize, Minimize, Copy, Shuffle, AlignLeft, AlignCenter,
@@ -224,6 +224,7 @@ export const tools: Tool[] = [
   { id: "pdf-bookmark-gen", name: "PDF Bookmark Generator", description: "Generate bookmark structure for PDFs", category: "pdf", icon: Bookmark, implemented: true },
   { id: "pdf-merge-helper", name: "PDF Merge Helper", description: "Generate merge commands for PDFs", category: "pdf", icon: Layers, implemented: true },
   { id: "pdf-split-helper", name: "PDF Split Helper", description: "Generate split commands by page range", category: "pdf", icon: Scissors, implemented: true },
+  { id: "pdf-editor", name: "PDF Editor", description: "Annotate, highlight, reorder & delete PDF pages", category: "pdf", icon: FileEdit, implemented: true },
 
   // ═══════════════════════════════════════
   // ADVANCED YOUTUBE TOOLS
@@ -234,4 +235,14 @@ export const tools: Tool[] = [
   { id: "yt-playlist-optimizer", name: "YouTube Playlist Optimizer", description: "Optimize playlist for discoverability", category: "youtube", icon: List, implemented: true },
   { id: "yt-comment-templates", name: "YouTube Comment Templates", description: "Ready-to-use comment reply templates", category: "youtube", icon: Type, implemented: true },
   { id: "yt-analytics-calc", name: "YouTube Analytics Calculator", description: "Calculate engagement rates and metrics", category: "youtube", icon: Calculator, implemented: true },
+  { id: "yt-title-optimizer", name: "YouTube Title Optimizer", description: "Score and optimize video titles with rules", category: "youtube", icon: Target, implemented: true },
+  { id: "yt-description-builder", name: "YouTube Description Builder", description: "Build descriptions from smart templates", category: "youtube", icon: FileText, implemented: true },
+  { id: "yt-seo-scorer", name: "YouTube Video SEO Scorer", description: "Score your video's overall SEO health", category: "youtube", icon: Activity, implemented: true },
+
+  // ═══════════════════════════════════════
+  // SEO AI-LIKE TOOLS (TEMPLATE-BASED)
+  // ═══════════════════════════════════════
+  { id: "seo-content-analyzer", name: "SEO Content Analyzer", description: "Analyze content for SEO best practices", category: "seo", icon: Activity, implemented: true },
+  { id: "seo-onpage-checker", name: "On-Page SEO Checker", description: "Check HTML page for on-page SEO factors", category: "seo", icon: CheckCircle, implemented: true },
+  { id: "seo-keyword-planner", name: "SEO Keyword Planner", description: "Generate keyword ideas by intent & niche", category: "seo", icon: Target, implemented: true },
 ];
