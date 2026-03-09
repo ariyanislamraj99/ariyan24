@@ -142,6 +142,19 @@ const toolComponents: Record<string, React.LazyExoticComponent<any>> = {
   "pdf-watermark-gen": lazy(() => import("@/tools/PdfWatermarkGen")),
   "pdf-invoice-gen": lazy(() => import("@/tools/PdfInvoiceGen")),
   "pdf-resume-checker": lazy(() => import("@/tools/PdfResumeChecker")),
+  "pdf-compare": lazy(() => import("@/tools/PdfCompare")),
+  "pdf-table-extractor": lazy(() => import("@/tools/PdfTableExtractor")),
+  "pdf-image-extractor": lazy(() => import("@/tools/PdfImageExtractor")),
+  "pdf-bookmark-gen": lazy(() => import("@/tools/PdfBookmarkGen")),
+  "pdf-merge-helper": lazy(() => import("@/tools/PdfMergeHelper")),
+  "pdf-split-helper": lazy(() => import("@/tools/PdfSplitHelper")),
+  // Advanced YouTube
+  "yt-keyword-research": lazy(() => import("@/tools/YtKeywordResearch")),
+  "yt-competitor-analyzer": lazy(() => import("@/tools/YtCompetitorAnalyzer")),
+  "yt-upload-checklist": lazy(() => import("@/tools/YtUploadChecklist")),
+  "yt-playlist-optimizer": lazy(() => import("@/tools/YtPlaylistOptimizer")),
+  "yt-comment-templates": lazy(() => import("@/tools/YtCommentTemplates")),
+  "yt-analytics-calc": lazy(() => import("@/tools/YtAnalyticsCalc")),
 };
 
 const ToolPage = () => {

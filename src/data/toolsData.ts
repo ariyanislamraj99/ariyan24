@@ -218,4 +218,20 @@ export const tools: Tool[] = [
   { id: "pdf-watermark-gen", name: "PDF Watermark Generator", description: "Generate watermark CSS/HTML for PDFs", category: "pdf", icon: PenTool, implemented: true },
   { id: "pdf-invoice-gen", name: "PDF Invoice Generator", description: "Create printable invoices as PDF", category: "pdf", icon: FileText, implemented: true },
   { id: "pdf-resume-checker", name: "PDF Resume Checker", description: "Check resume PDF for best practices", category: "pdf", icon: CheckCircle, implemented: true },
+  { id: "pdf-compare", name: "PDF Comparison Tool", description: "Compare two PDF files side by side", category: "pdf", icon: AlignCenter, implemented: true },
+  { id: "pdf-table-extractor", name: "PDF Table Extractor", description: "Extract tables from PDF files", category: "pdf", icon: Grid, implemented: true },
+  { id: "pdf-image-extractor", name: "PDF Image Analyzer", description: "Analyze and list images in PDF files", category: "pdf", icon: Image, implemented: true },
+  { id: "pdf-bookmark-gen", name: "PDF Bookmark Generator", description: "Generate bookmark structure for PDFs", category: "pdf", icon: Bookmark, implemented: true },
+  { id: "pdf-merge-helper", name: "PDF Merge Helper", description: "Generate merge commands for PDFs", category: "pdf", icon: Layers, implemented: true },
+  { id: "pdf-split-helper", name: "PDF Split Helper", description: "Generate split commands by page range", category: "pdf", icon: Scissors, implemented: true },
+
+  // ═══════════════════════════════════════
+  // ADVANCED YOUTUBE TOOLS
+  // ═══════════════════════════════════════
+  { id: "yt-keyword-research", name: "YouTube Keyword Research", description: "Generate keyword ideas from seed terms", category: "youtube", icon: Search, implemented: true },
+  { id: "yt-competitor-analyzer", name: "YouTube Competitor Analyzer", description: "Analyze competing YouTube channels", category: "youtube", icon: BarChart, implemented: true },
+  { id: "yt-upload-checklist", name: "YouTube Upload Checklist", description: "Pre-upload optimization checklist", category: "youtube", icon: CheckCircle, implemented: true },
+  { id: "yt-playlist-optimizer", name: "YouTube Playlist Optimizer", description: "Optimize playlist for discoverability", category: "youtube", icon: List, implemented: true },
+  { id: "yt-comment-templates", name: "YouTube Comment Templates", description: "Ready-to-use comment reply templates", category: "youtube", icon: Type, implemented: true },
+  { id: "yt-analytics-calc", name: "YouTube Analytics Calculator", description: "Calculate engagement rates and metrics", category: "youtube", icon: Calculator, implemented: true },
 ];
