@@ -204,4 +204,18 @@ export const tools: Tool[] = [
   { id: "wp-password-gen", name: "WP Password Generator", description: "Generate WordPress-safe passwords", category: "wordpress", icon: Key, implemented: true },
   { id: "wp-salt-gen", name: "WP Salt Key Generator", description: "Generate WordPress security salts", category: "wordpress", icon: Lock, implemented: true },
   { id: "wp-shortcode-gen", name: "WP Shortcode Generator", description: "Generate common WP shortcodes", category: "wordpress", icon: Code, implemented: true },
+
+  // ═══════════════════════════════════════
+  // PDF TOOLS
+  // ═══════════════════════════════════════
+  { id: "pdf-page-counter", name: "PDF Page Counter", description: "Count pages in a PDF file", category: "pdf", icon: FileText, implemented: true },
+  { id: "pdf-metadata-viewer", name: "PDF Metadata Viewer", description: "View PDF file metadata and properties", category: "pdf", icon: Info, implemented: true },
+  { id: "pdf-text-extractor", name: "PDF Text Extractor", description: "Extract readable text from PDF files", category: "pdf", icon: AlignLeft, implemented: true },
+  { id: "pdf-word-counter", name: "PDF Word Counter", description: "Count words and characters in PDF", category: "pdf", icon: Hash, implemented: true },
+  { id: "pdf-link-extractor", name: "PDF Link Extractor", description: "Extract all URLs from a PDF file", category: "pdf", icon: Link, implemented: true },
+  { id: "pdf-size-analyzer", name: "PDF Size Analyzer", description: "Analyze PDF file size and composition", category: "pdf", icon: HardDrive, implemented: true },
+  { id: "pdf-password-gen", name: "PDF Password Generator", description: "Generate strong passwords for PDF files", category: "pdf", icon: Key, implemented: true },
+  { id: "pdf-watermark-gen", name: "PDF Watermark Generator", description: "Generate watermark CSS/HTML for PDFs", category: "pdf", icon: PenTool, implemented: true },
+  { id: "pdf-invoice-gen", name: "PDF Invoice Generator", description: "Create printable invoices as PDF", category: "pdf", icon: FileText, implemented: true },
+  { id: "pdf-resume-checker", name: "PDF Resume Checker", description: "Check resume PDF for best practices", category: "pdf", icon: CheckCircle, implemented: true },
 ];
