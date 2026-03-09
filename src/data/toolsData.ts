@@ -49,13 +49,13 @@ export const tools: Tool[] = [
   { id: "url-encoder", name: "URL Encoder/Decoder", description: "Encode or decode URL strings", category: "web", icon: Link, implemented: true },
   { id: "base64", name: "Base64 Encoder/Decoder", description: "Encode or decode Base64 strings", category: "web", icon: Binary, implemented: true },
   { id: "qr-generator", name: "QR Code Generator", description: "Generate QR codes from text or URLs", category: "web", icon: QrCode, implemented: true },
-  { id: "meta-tag-generator", name: "Meta Tag Generator", description: "Generate HTML meta tags for SEO", category: "web", icon: Tag, implemented: true },
-  { id: "robots-txt-generator", name: "Robots.txt Generator", description: "Create robots.txt files", category: "web", icon: FileText, implemented: true },
+  { id: "meta-tag-generator", name: "Meta Tag Generator", description: "Generate HTML meta tags for SEO", category: "seo", icon: Tag, implemented: true },
+  { id: "robots-txt-generator", name: "Robots.txt Generator", description: "Create robots.txt files", category: "seo", icon: FileText, implemented: true },
   { id: "htaccess-redirect", name: ".htaccess Redirect Generator", description: "Generate .htaccess redirect rules", category: "web", icon: RefreshCw, implemented: true },
-  { id: "open-graph-generator", name: "Open Graph Generator", description: "Generate Open Graph meta tags", category: "web", icon: Globe, implemented: true },
+  { id: "open-graph-generator", name: "Open Graph Generator", description: "Generate Open Graph meta tags", category: "seo", icon: Globe, implemented: true },
   { id: "favicon-generator", name: "Favicon Generator", description: "Create favicon from text/emoji", category: "web", icon: Star, implemented: true },
-  { id: "sitemap-generator", name: "Sitemap XML Generator", description: "Generate XML sitemaps", category: "web", icon: List, implemented: true },
-  { id: "schema-generator", name: "Schema Markup Generator", description: "Generate JSON-LD structured data", category: "web", icon: Database, implemented: true },
+  { id: "sitemap-generator", name: "Sitemap XML Generator", description: "Generate XML sitemaps", category: "seo", icon: List, implemented: true },
+  { id: "schema-generator", name: "Schema Markup Generator", description: "Generate JSON-LD structured data", category: "seo", icon: Database, implemented: true },
   
   // ═══════════════════════════════════════
   // IMAGE TOOLS
