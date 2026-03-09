@@ -12,7 +12,7 @@ import {
   Wrench, Key
 } from "lucide-react";
 
-export type ToolCategory = "web" | "image" | "seo" | "youtube" | "text" | "developer" | "converter" | "security" | "social" | "design" | "wordpress";
+export type ToolCategory = "web" | "image" | "seo" | "youtube" | "text" | "developer" | "converter" | "security" | "social" | "design" | "wordpress" | "pdf";
 
 export interface Tool {
   id: string;
