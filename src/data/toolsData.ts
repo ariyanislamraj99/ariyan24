@@ -1,5 +1,5 @@
 import {
-  Globe, Image, Search, Youtube, Palette, Type, Code, FileText, Lock, Hash,
+  Globe, Image, Search, Youtube, Palette, Type, Code, FileText, Lock, Hash, FileEdit,
   Link, Mail, QrCode, Timer, Calculator, Ruler, RefreshCw, Binary, Shield,
   FileCode, Smartphone, Zap, Eye, Layers, Download, Upload, Scissors,
   RotateCw, Maximize, Minimize, Copy, Shuffle, AlignLeft, AlignCenter,
