@@ -52,7 +52,7 @@ const PdfEditor = () => {
         const [copiedPage] = await singleDoc.copyPages(pdfDoc, [i]);
         singleDoc.addPage(copiedPage);
         const pdfBytes = await singleDoc.save();
-        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
         const url = URL.createObjectURL(blob);
         pageImages.push(url);
       }
