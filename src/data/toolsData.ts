@@ -100,6 +100,13 @@ export const tools: Tool[] = [
   { id: "yt-channel-id", name: "YouTube Channel ID Finder", description: "Extract channel ID from URL", category: "youtube", icon: Search, implemented: true },
   { id: "yt-video-id", name: "YouTube Video ID Extractor", description: "Extract video ID from any YouTube URL", category: "youtube", icon: Hash, implemented: true },
   { id: "yt-playlist-link", name: "YouTube Playlist Link Generator", description: "Generate playlist URLs", category: "youtube", icon: List, implemented: true },
+  { id: "yt-seo-checklist", name: "YouTube SEO Checker", description: "Score your video's SEO optimization", category: "youtube", icon: CheckCircle, implemented: true },
+  { id: "yt-hashtag-gen", name: "YouTube Hashtag Generator", description: "Generate optimized YouTube hashtags", category: "youtube", icon: Hash, implemented: true },
+  { id: "yt-chapter-gen", name: "YouTube Chapter Generator", description: "Create chapter timestamps for videos", category: "youtube", icon: Clock, implemented: true },
+  { id: "yt-end-screen-gen", name: "YouTube End Screen Generator", description: "Create end screen CTA scripts", category: "youtube", icon: Target, implemented: true },
+  { id: "yt-ab-title", name: "YouTube A/B Title Generator", description: "Generate title variations for testing", category: "youtube", icon: Shuffle, implemented: true },
+  { id: "yt-desc-optimizer", name: "YouTube Description Optimizer", description: "Analyze and optimize video descriptions", category: "youtube", icon: Eye, implemented: true },
+  { id: "yt-shorts-ideas", name: "YouTube Shorts Ideas Generator", description: "Generate Shorts video ideas from topics", category: "youtube", icon: Zap, implemented: true },
   
   // ═══════════════════════════════════════
   // TEXT TOOLS
