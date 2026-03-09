@@ -54,6 +54,13 @@ const toolComponents: Record<string, React.LazyExoticComponent<any>> = {
   "yt-channel-id": lazy(() => import("@/tools/YtChannelId")),
   "yt-video-id": lazy(() => import("@/tools/YtVideoId")),
   "yt-playlist-link": lazy(() => import("@/tools/YtPlaylistLink")),
+  "yt-seo-checklist": lazy(() => import("@/tools/YtSeoChecklist")),
+  "yt-hashtag-gen": lazy(() => import("@/tools/YtHashtagGen")),
+  "yt-chapter-gen": lazy(() => import("@/tools/YtChapterGen")),
+  "yt-end-screen-gen": lazy(() => import("@/tools/YtEndScreen")),
+  "yt-ab-title": lazy(() => import("@/tools/YtAbTitle")),
+  "yt-desc-optimizer": lazy(() => import("@/tools/YtDescOptimizer")),
+  "yt-shorts-ideas": lazy(() => import("@/tools/YtShortsIdeas")),
   // Text
   "case-converter": lazy(() => import("@/tools/CaseConverter")),
   "text-repeater": lazy(() => import("@/tools/TextRepeater")),
