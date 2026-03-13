@@ -328,9 +328,9 @@ export const tools: Tool[] = [
   // ═══════════════════════════════════════
   // ADDITIONAL SEO TOOLS (75)
   // ═══════════════════════════════════════
-  { id: "serp-preview", name: "SERP Preview Tool", description: "Preview Google search result appearance", category: "seo", icon: Search, implemented: false },
-  { id: "serp-simulator", name: "SERP Simulator", description: "Simulate Google SERP with custom results", category: "seo", icon: Monitor, implemented: false },
-  { id: "title-tag-optimizer", name: "Title Tag Optimizer", description: "Optimize page title tags for SEO", category: "seo", icon: Tag, implemented: false },
+  { id: "serp-preview", name: "SERP Preview Tool", description: "Preview Google search result appearance", category: "seo", icon: Search, implemented: true },
+  { id: "serp-simulator", name: "SERP Simulator", description: "Simulate Google SERP with custom results", category: "seo", icon: Monitor, implemented: true },
+  { id: "title-tag-optimizer", name: "Title Tag Optimizer", description: "Optimize page title tags for SEO", category: "seo", icon: Tag, implemented: true },
   { id: "meta-desc-writer", name: "Meta Description Writer", description: "Craft compelling meta descriptions", category: "seo", icon: PenTool, implemented: false },
   { id: "keyword-clustering", name: "Keyword Clustering Tool", description: "Group related keywords into clusters", category: "seo", icon: Grid, implemented: false },
   { id: "keyword-gap-analyzer", name: "Keyword Gap Analyzer", description: "Find keyword opportunities vs competitors", category: "seo", icon: BarChart, implemented: false },
