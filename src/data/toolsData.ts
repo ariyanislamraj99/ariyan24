@@ -164,8 +164,8 @@ export const tools: Tool[] = [
   { id: "password-generator", name: "Password Generator", description: "Generate secure random passwords", category: "security", icon: Key, implemented: true },
   { id: "password-strength", name: "Password Strength Checker", description: "Check password strength", category: "security", icon: Shield, implemented: true },
   { id: "hash-generator", name: "Hash Generator (MD5/SHA)", description: "Generate MD5, SHA-1, SHA-256 hashes", category: "security", icon: Lock, implemented: true },
-  { id: "ssl-checker", name: "SSL Certificate Info", description: "Check SSL certificate details", category: "security", icon: Shield, implemented: false },
-  { id: "ip-lookup", name: "IP Address Lookup", description: "Get your public IP and details", category: "security", icon: Globe, implemented: false },
+  { id: "ssl-checker", name: "SSL Certificate Info", description: "Check SSL certificate details", category: "security", icon: Shield, implemented: true },
+  { id: "ip-lookup", name: "IP Address Lookup", description: "Get your public IP and details", category: "security", icon: Globe, implemented: true },
   { id: "encryption-tool", name: "Text Encryption/Decryption", description: "Encrypt and decrypt text (AES)", category: "security", icon: Lock, implemented: true },
   { id: "csp-generator", name: "CSP Header Generator", description: "Generate Content-Security-Policy", category: "security", icon: Shield, implemented: true },
   
