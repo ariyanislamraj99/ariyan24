@@ -196,8 +196,8 @@ export const tools: Tool[] = [
   // ═══════════════════════════════════════
   // WORDPRESS TOOLS
   // ═══════════════════════════════════════
-  { id: "wp-theme-detector", name: "WP Theme Detector", description: "Detect WordPress theme from URL", category: "wordpress", icon: ScanLine, implemented: false },
-  { id: "wp-plugin-detector", name: "WP Plugin Detector", description: "Detect WordPress plugins from URL", category: "wordpress", icon: Layers, implemented: false },
+  { id: "wp-theme-detector", name: "WP Theme Detector", description: "Detect WordPress theme from URL", category: "wordpress", icon: ScanLine, implemented: true },
+  { id: "wp-plugin-detector", name: "WP Plugin Detector", description: "Detect WordPress plugins from URL", category: "wordpress", icon: Layers, implemented: true },
   { id: "wp-security-header", name: "WP Security Headers", description: "Generate WordPress security headers", category: "wordpress", icon: Shield, implemented: true },
   { id: "wp-htaccess-gen", name: "WP .htaccess Generator", description: "Generate WordPress .htaccess rules", category: "wordpress", icon: FileText, implemented: true },
   { id: "wp-robots-gen", name: "WP Robots.txt Generator", description: "Generate WordPress robots.txt", category: "wordpress", icon: FileText, implemented: true },
