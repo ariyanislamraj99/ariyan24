@@ -1,0 +1,20 @@
+import { useState } from "react";
+import { ToolLayout, ToolOutput } from "./ToolComponents";
+const CookieConsentGen = () => {
+  const [style, setStyle] = useState("bar");
+  const [position, setPosition] = useState("bottom");
+  const [bg, setBg] = useState("#1e1e2e");
+  const [fg, setFg] = useState("#ffffff");
+  const bar = `<!-- Cookie Consent Banner -->\n<div id="cookie-consent" style="position:fixed;${position}:0;left:0;right:0;background:${bg};color:${fg};padding:16px 24px;display:flex;align-items:center;justify-content:space-between;z-index:9999;font-size:14px;">\n  <p style="margin:0;">🍪 We use cookies to enhance your experience. By continuing, you agree to our use of cookies.</p>\n  <div style="display:flex;gap:8px;">\n    <button onclick="acceptCookies()" style="background:#6366f1;color:white;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;">Accept</button>\n    <button onclick="declineCookies()" style="background:transparent;color:${fg};border:1px solid ${fg}44;padding:8px 20px;border-radius:6px;cursor:pointer;">Decline</button>\n  </div>\n</div>\n\n<script>\nfunction acceptCookies() {\n  localStorage.setItem('cookieConsent', 'accepted');\n  document.getElementById('cookie-consent').style.display = 'none';\n}\nfunction declineCookies() {\n  localStorage.setItem('cookieConsent', 'declined');\n  document.getElementById('cookie-consent').style.display = 'none';\n}\nif (localStorage.getItem('cookieConsent')) {\n  document.getElementById('cookie-consent').style.display = 'none';\n}\n</script>`;
+  const modal = `<!-- Cookie Consent Modal -->\n<div id="cookie-modal" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:9999;">\n  <div style="background:${bg};color:${fg};padding:32px;border-radius:16px;max-width:400px;text-align:center;">\n    <h3 style="margin:0 0 12px;font-size:18px;">🍪 Cookie Preferences</h3>\n    <p style="font-size:14px;opacity:0.8;">We use cookies for analytics and personalization. Choose your preference:</p>\n    <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px;">\n      <button onclick="acceptCookies()" style="background:#6366f1;color:white;border:none;padding:12px;border-radius:8px;cursor:pointer;font-weight:600;">Accept All</button>\n      <button onclick="declineCookies()" style="background:transparent;color:${fg};border:1px solid ${fg}33;padding:12px;border-radius:8px;cursor:pointer;">Essential Only</button>\n    </div>\n  </div>\n</div>`;
+  return <ToolLayout>
+    <div className="grid grid-cols-2 gap-4">
+      <div><label className="text-sm font-medium text-foreground block mb-1">Style</label><select value={style} onChange={e=>setStyle(e.target.value)} className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-glass-border/20 text-foreground text-sm"><option value="bar">Banner Bar</option><option value="modal">Modal</option></select></div>
+      <div><label className="text-sm font-medium text-foreground block mb-1">Position</label><select value={position} onChange={e=>setPosition(e.target.value)} className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-glass-border/20 text-foreground text-sm"><option value="bottom">Bottom</option><option value="top">Top</option></select></div>
+      <div><label className="text-sm font-medium text-foreground block mb-1">BG Color</label><input type="color" value={bg} onChange={e=>setBg(e.target.value)} className="w-full h-10 rounded cursor-pointer" /></div>
+      <div><label className="text-sm font-medium text-foreground block mb-1">Text Color</label><input type="color" value={fg} onChange={e=>setFg(e.target.value)} className="w-full h-10 rounded cursor-pointer" /></div>
+    </div>
+    <ToolOutput label="Code" value={style==="bar"?bar:modal} />
+  </ToolLayout>;
+};
+export default CookieConsentGen;
