@@ -139,8 +139,8 @@ export const tools: Tool[] = [
   { id: "diff-checker", name: "Code Diff Checker", description: "Compare two code snippets", category: "developer", icon: AlignCenter, implemented: true },
   { id: "markdown-preview", name: "Markdown Preview", description: "Preview Markdown in real-time", category: "developer", icon: BookOpen, implemented: true },
   { id: "sql-formatter", name: "SQL Formatter", description: "Format and beautify SQL queries", category: "developer", icon: Database, implemented: true },
-  { id: "css-to-tailwind", name: "CSS to Tailwind", description: "Convert CSS to Tailwind classes", category: "developer", icon: Wand2, implemented: false },
-  { id: "npm-package-search", name: "NPM Package Info", description: "Search npm package information", category: "developer", icon: Layers, implemented: false },
+  { id: "css-to-tailwind", name: "CSS to Tailwind", description: "Convert CSS to Tailwind classes", category: "developer", icon: Wand2, implemented: true },
+  { id: "npm-package-search", name: "NPM Package Info", description: "Search npm package information", category: "developer", icon: Layers, implemented: true },
   
   // ═══════════════════════════════════════
   // CONVERTERS
