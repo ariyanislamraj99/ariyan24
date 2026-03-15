@@ -71,7 +71,7 @@ export const tools: Tool[] = [
   { id: "placeholder-image", name: "Placeholder Image Generator", description: "Generate placeholder images", category: "image", icon: Image, implemented: true },
   { id: "gradient-generator", name: "CSS Gradient Generator", description: "Create beautiful CSS gradients", category: "image", icon: Palette, implemented: true },
   { id: "svg-to-png", name: "SVG to PNG Converter", description: "Convert SVG files to PNG", category: "image", icon: Image, implemented: true },
-  { id: "screenshot-mockup", name: "Screenshot Mockup", description: "Place screenshots in device mockups", category: "image", icon: Monitor, implemented: false },
+  { id: "screenshot-mockup", name: "Screenshot Mockup", description: "Place screenshots in device mockups", category: "image", icon: Monitor, implemented: true },
   { id: "image-watermark", name: "Image Watermark", description: "Add text watermarks to images", category: "image", icon: PenTool, implemented: true },
   
   // ═══════════════════════════════════════
