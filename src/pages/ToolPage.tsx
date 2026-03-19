@@ -131,6 +131,10 @@ const toolComponents: Record<string, React.LazyExoticComponent<any>> = {
   "wp-password-gen": lazy(() => import("@/tools/WpPasswordGen")),
   "wp-salt-gen": lazy(() => import("@/tools/WpSaltGen")),
   "wp-shortcode-gen": lazy(() => import("@/tools/WpShortcodeGen")),
+  "wp-theme-detector": lazy(() => import("@/tools/WpThemeDetector")),
+  "wp-plugin-detector": lazy(() => import("@/tools/WpPluginDetector")),
+  // Special
+  "bd-id-card-gen": lazy(() => import("@/tools/BdIdCardGenerator")),
   // PDF
   "pdf-page-counter": lazy(() => import("@/tools/PdfPageCounter")),
   "pdf-metadata-viewer": lazy(() => import("@/tools/PdfMetadataViewer")),
