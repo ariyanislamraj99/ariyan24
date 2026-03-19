@@ -224,12 +224,12 @@ const WpPluginDetector = () => {
               <div className="flex flex-wrap gap-2 text-xs">
                 {p.requires && (
                   <span className="flex items-center gap-1 text-muted-foreground">
-                    <CheckCircle size={12} className="text-green-500" /> WP {p.requires}+
+                    <CheckCircle size={12} className="text-primary" /> WP {p.requires}+
                   </span>
                 )}
                 {p.requires_php && (
                   <span className="flex items-center gap-1 text-muted-foreground">
-                    <Code size={12} className="text-blue-500" /> PHP {p.requires_php}+
+                    <Code size={12} className="text-primary" /> PHP {p.requires_php}+
                   </span>
                 )}
               </div>
